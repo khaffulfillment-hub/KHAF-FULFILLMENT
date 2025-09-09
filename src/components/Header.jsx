@@ -44,7 +44,7 @@ function Header({ onOpenPopup }) {
         {/* Logo and Title */}
         <div className="flex items-center">
           <img src={Logo} alt="Edison 3PL Logo" className="h-15 w-auto mr-4 hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-lg" />
-          <div className="p-0 text-zinc-950 hover:scale-105 transition-transform duration-300 ease-in-out hover:text-zinc-500">
+          <div className="p-0 text-lime-400 hover:scale-105 transition-transform duration-300 ease-in-out hover:text-lime-600">
             <span className="block text-3xl font-bold text-foreground">
               EDISON 3PL
             </span>
