@@ -10,7 +10,7 @@ import {
 
 function ServiceCard({ title, description, cta, imageUrl }) {
   return (
-    <Card className="mt-6 w-96 bg-charcoal border-2 border-teal-700 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out neon-glow-card">
+    <Card className="mt-6 w-96 hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out neon-glow-card">
       <CardHeader color="blue-gray" className="relative h-56">
         {imageUrl && (
           <img

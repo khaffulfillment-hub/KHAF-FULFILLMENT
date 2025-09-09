@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <section id="about" className="bg-charcoal text-cream py-16 px-8 pt-24">
+    <section id="about" className="bg-[hsl(var(--background))] text-cream py-16 px-8 pt-24">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6 text-neon-green">Our Philosophy</h2>
         <p className="text-lg leading-relaxed">

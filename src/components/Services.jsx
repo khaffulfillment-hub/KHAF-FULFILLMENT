@@ -3,6 +3,7 @@ import ServiceCard from './ServiceCard';
 import WarehousingInventoryImg from '../assets/Warehousing & Inventory.png';
 import OrderFulfillmentImg from '../assets/Order Fulfillment.png';
 import CustomPackagingImg from '../assets/Custom Packaging & Kitting.png';
+import { Typography } from "@material-tailwind/react"; // Import Typography for consistent heading style
 
 function Services() {
   const services = [
@@ -28,17 +29,17 @@ function Services() {
   ];
 
   return (
-    <section id="services" className="bg-charcoal text-cream py-16 px-8 pt-24">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-neon-green">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="services" className="bg-green-50 py-16 px-6 md:px-12 pt-24"> {/* Changed background and padding */}
+      <div className="max-w-7xl mx-auto"> {/* Adjusted max-width to match pricing */}
+        <Typography variant="h2" className="text-center font-bold mb-6 text-green-900">Our Services</Typography> {/* Changed heading style */}
+        <div className="flex flex-col md:flex-row justify-center gap-10"> {/* Changed layout to flex and adjusted gap */}
           {services.map((service, index) => (
             <ServiceCard
               key={index}
               title={service.title}
               description={service.description}
               cta={service.cta}
-              imageUrl={service.imageUrl} // Assuming ServiceCard can accept imageUrl prop
+              imageUrl={service.imageUrl}
             />
           ))}
         </div>

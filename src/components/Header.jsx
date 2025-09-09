@@ -36,7 +36,7 @@ function Header({ onOpenPopup }) {
       className={cn(
         "fixed top-0 left-0 right-0 w-full z-50 py-4 px-8 flex justify-between items-center transition-all duration-300",
         isScrolled
-          ? "bg-green-50 shadow-md shadow-lg"
+          ? "bg-green-50 shadow-md backdrop-blur-md border-b border-green-200"
           : "bg-green-100"
       )}
     >
@@ -125,59 +125,61 @@ function Header({ onOpenPopup }) {
         </div>
       </div>
 
-      {/* Mobile Menu Content */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background shadow-md py-4 px-8">
-          <nav className="flex flex-col space-y-4">
-              <NavigationMenuList className="flex flex-col items-start gap-4">
-                {navItems.map((item) => (
-                    <NavigationMenuItem key={item}>
-                      <NavigationMenuLink
-                        href={`#${item}`}
-                        className="text-foreground hover:text-primary"
-                        onClick={toggleMobileMenu}
-                      >
-                        {item.charAt(0).toUpperCase() + item.slice(1)}
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
-                  )
-                )}
-              </NavigationMenuList>
-          </nav>
-          {/* --- Updated CTA Buttons (Mobile) --- */}
-          <div className="flex flex-col space-y-4 mt-4">
-            <Button
-              variant="outline"
-              className="
-                px-6 py-3 font-semibold rounded-lg
-                bg-green-50 text-green-800 border-green-200
-                transition-all duration-300 ease-in-out
-                hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
-                hover:scale-105 hover:shadow-lg hover:border-transparent
-              "
-            >
-              Track Shipment
-            </Button>
-            <Button
-              onClick={() => {
-                onOpenPopup();
-                toggleMobileMenu();
-              }}
-              className="
-                px-6 py-3 font-semibold rounded-lg
-                bg-green-50 text-green-800
-                transition-all duration-300 ease-in-out
-                hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
-                hover:scale-105 hover:shadow-lg
-              "
-            >
-              Get a Quote
-            </Button>
+        {/* Mobile Menu Content */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-green-50 shadow-md py-4 px-8">
+            <nav className="flex flex-col space-y-4">
+              <NavigationMenu> {/* Added NavigationMenu wrapper */}
+                <NavigationMenuList className="flex flex-col items-start gap-4">
+                  {navItems.map((item) => (
+                      <NavigationMenuItem key={item}>
+                        <NavigationMenuLink
+                          href={`#${item}`}
+                          className="text-foreground hover:text-primary"
+                          onClick={toggleMobileMenu}
+                        >
+                          {item.charAt(0).toUpperCase() + item.slice(1)}
+                        </NavigationMenuLink>
+                      </NavigationMenuItem>
+                    )
+                  )}
+                </NavigationMenuList>
+              </NavigationMenu> {/* Closing NavigationMenu wrapper */}
+            </nav>
+            {/* --- Updated CTA Buttons (Mobile) --- */}
+            <div className="flex flex-col space-y-4 mt-4">
+              <Button
+                variant="outline"
+                className="
+                  px-6 py-3 font-semibold rounded-lg
+                  bg-green-200 text-green-800 border-green-200
+                  transition-all duration-300 ease-in-out
+                  hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+                  hover:scale-105 hover:shadow-lg hover:border-transparent
+                "
+              >
+                Track Shipment
+              </Button>
+              <Button
+                onClick={() => {
+                  onOpenPopup();
+                  toggleMobileMenu();
+                }}
+                className="
+                  px-6 py-3 font-semibold rounded-lg
+                  bg-green-200 text-green-800
+                  transition-all duration-300 ease-in-out
+                  hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+                  hover:scale-105 hover:shadow-lg
+                "
+              >
+                Get a Quote
+              </Button>
+            </div>
           </div>
-        </div>
-      )}
-    </header>
-  );
-}
+        )}
+      </header>
+    );
+  }
 
-export default Header;
+  export default Header;
