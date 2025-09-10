@@ -48,13 +48,13 @@ export default function Pricing() {
         EDISON 3PL BY AMAZON
       </Typography>
 
-      <div className="flex flex-col md:flex-row justify-center gap-10 max-w-7xl mx-auto mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto mb-16 justify-items-center">
         {tiers.map((tier) => (
           <Card
             key={tier.scale}
             shadow={true}
             color="white"
-            className="w-full max-w-sm rounded-3xl bg-white hover:scale-105 transition-transform duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-green-400/40 cursor-pointer"
+            className="w-full rounded-3xl bg-white hover:scale-105 transition-transform duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-green-400/40 cursor-pointer"
           >
             <CardHeader
               variant="gradient"

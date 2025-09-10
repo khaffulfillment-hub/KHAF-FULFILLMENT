@@ -71,7 +71,7 @@ function Industries() {
   };
 
   return (
-    <section id="industries" className="bg-charcoal text-cream py-16 px-8 pt-24"> {/* Added px-8 for consistency */}
+    <section id="industries" className="bg-[hsl(var(--background))] text-cream py-16 px-8 pt-24"> {/* Added px-8 for consistency */}
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-neon-green">Industries We Serve</h2>
         

@@ -68,14 +68,23 @@ function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`bg-neon-green text-charcoal font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out
-            ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-opacity-80'}`}
+          className="
+              px-6 py-3 font-semibold rounded-full
+              bg-gradient-to-r from-green-300 to-green-500 text-white
+              transition-all duration-300 ease-in-out
+              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+              hover:scale-105 hover:shadow-lg"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
       </div>
       {submitSuccess && (
-        <div className="mt-4 text-center text-green-400">
+        <div className="
+              px-6 py-3 font-semibold rounded-full
+              bg-gradient-to-r from-green-300 to-green-500 text-white
+              transition-all duration-300 ease-in-out
+              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+              hover:scale-105 hover:shadow-lg">
           Message Sent!
         </div>
       )}

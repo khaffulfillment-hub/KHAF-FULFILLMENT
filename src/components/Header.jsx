@@ -56,7 +56,7 @@ function Header({ onOpenPopup }) {
 
         {/* Desktop Navigation with Animation */}
         <nav 
-          className="hidden md:flex items-center lg:ml-[200px] gap-4"
+          className="hidden md:flex items-center ml-auto gap-4"
           onMouseLeave={() => setHoveredItem(null)}
         >
           <NavigationMenu>
@@ -114,8 +114,8 @@ function Header({ onOpenPopup }) {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+          {/* Mobile Menu Button */}
+        <div className="lg:hidden flex items-center">
           <button
             onClick={toggleMobileMenu}
             className="text-foreground focus:outline-none"
@@ -127,7 +127,7 @@ function Header({ onOpenPopup }) {
 
         {/* Mobile Menu Content */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-green-50 shadow-md py-4 px-8">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-green-50 shadow-md py-4 px-8">
             <nav className="flex flex-col space-y-4">
               <NavigationMenu> {/* Added NavigationMenu wrapper */}
                 <NavigationMenuList className="flex flex-col items-start gap-4">
