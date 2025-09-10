@@ -36,43 +36,34 @@ function Industries() {
     autoplaySpeed: 3000,
     responsive: [
       {
-        // Extra large devices: 2 cards
-        breakpoint: 1200, // Custom breakpoint for very large screens
+        // Large devices (desktops, 992px and up)
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3, // Default large screen view
           slidesToScroll: 1,
         }
       },
       {
-        // Large devices: 3 cards
-        breakpoint: 1024, // Tailwind's lg breakpoint
+        // Medium devices (tablets, 768px and up)
+        breakpoint: 768,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2, // User requested 2 cards for tablets
           slidesToScroll: 1,
         }
       },
       {
-        // Mid devices: 2 cards, starting from 820px as per user feedback
-        // react-slick breakpoint is max-width, so this applies up to 819px
-        breakpoint: 819, 
+        // Small devices (phones, 480px and up)
+        breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1, // User requested 1 card for mobile
           slidesToScroll: 1,
         }
       },
       {
-        // Mobile devices: 1 card
-        breakpoint: 480, // Standard breakpoint for smaller mobile
+        // Extra small devices (phones, 320px and up)
+        breakpoint: 320,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        // Very small mobile devices: 1 card
-        breakpoint: 320, 
-        settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Ensure 1 card for very small screens too
           slidesToScroll: 1,
         }
       }
