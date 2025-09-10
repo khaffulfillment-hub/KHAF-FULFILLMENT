@@ -22,7 +22,7 @@ function IndustryCard({ name, imageUrl }) {
       </CardHeader>
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium text-lg">
+          <Typography color="blue-gray" className="font-medium text-lg whitespace-nowrap">
             {name}
           </Typography>
         </div>

@@ -26,14 +26,14 @@ function Industries() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300, // Reduced speed for smoother transitions
     slidesToShow: 3, // Default for large screens
     slidesToScroll: 1,
     arrows: false,
     swipeToSlide: true,
     draggable: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000, // Reduced autoplay speed
     responsive: [
       {
         // Large devices (desktops, 992px and up)
