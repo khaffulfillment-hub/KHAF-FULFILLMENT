@@ -41,7 +41,7 @@ const teamMembers = [
 
 export function TeamSection() {
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 bg-[hsl(var(--background))]">
       <div className="container mx-auto text-center">
         <Typography variant="h2" color="blue-gray" className="mb-8">
           Our Team

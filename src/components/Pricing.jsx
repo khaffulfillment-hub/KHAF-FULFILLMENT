@@ -110,9 +110,9 @@ export default function Pricing() {
           <CardHeader
             variant="gradient"
             color="green"
-            className="rounded-3xl pt-6 pb-10 text-center bg-gradient-to-r from-green-300 to-green-500 text-white"
+            className="rounded-3xl pt-6 pb-10 text-center bg-gradient-to-r from-green-150 to-green-200 text-white"
           >
-            <Typography variant="h6" className="font-semibold">
+            <Typography variant="h6" className="font-extrabold text-green-800">
               {fbm.scale}
             </Typography>
           </CardHeader>

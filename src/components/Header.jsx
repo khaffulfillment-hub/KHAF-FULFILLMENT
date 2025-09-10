@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/new-logo.png";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -60,7 +60,7 @@ function Header({ onOpenPopup }) {
           <div className="flex items-center justify-between h-20">
             {/* Logo and Title */}
             <div className="flex-shrink-0 flex items-center">
-              <img src={Logo} alt="KHAF FULFILLMENT Logo" className="h-12 w-auto mr-3 hover:scale-105 transition-transform" />
+              <img src={Logo} alt="KHAF FULFILLMENT Logo" className="h-14 w-auto mr-3 hover:scale-105 transition-transform" />
               <div className="hover:scale-105 transition-transform">
                 <span className="block text-2xl font-bold text-lime-400">KHAF FULFILLMENT</span>
                 <span className="block text-xs text-lime-300">Fast. Flexible. Future-Ready.</span>

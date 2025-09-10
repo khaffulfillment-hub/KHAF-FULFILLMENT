@@ -1,5 +1,5 @@
 import React from 'react';
-import TruckLogo from '../assets/logo.png'; // Or PNG if SVG not available
+import TruckLogo from '../assets/new-logo.png'; // Or PNG if SVG not available
 
 function Hero() {
   return (
