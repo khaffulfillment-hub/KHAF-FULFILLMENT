@@ -32,7 +32,7 @@ const tiers = [
 ];
 
 const fbm = {
-  scale: "FULFILLMENT BY MERCHANT (FBM)",
+  scale: "EDISON 3PL BY MERCHANT (FBM)",
   price: "$2.25",
   features: ["Receiving & Inspection", "Labeling", "Box Label", "Forwarding"],
 };
@@ -45,7 +45,7 @@ export default function Pricing() {
       </Typography>
 
       <Typography variant="h4" className="text-center font-bold mb-12 text-green-800">
-        FULFILLMENT BY AMAZON
+        EDISON 3PL BY AMAZON
       </Typography>
 
       <div className="flex flex-col md:flex-row justify-center gap-10 max-w-7xl mx-auto mb-16">
@@ -83,7 +83,12 @@ export default function Pricing() {
             <CardFooter className="pt-0 text-center">
               <Button
                 variant="gradient"
-                className="bg-green-500 hover:bg-gradient-to-r from-green-300 to-green-500 text-white font-bold py-2 px-6 rounded-full shadow"
+              className="
+              px-6 py-3 font-semibold rounded-full
+              bg-gradient-to-r from-green-300 to-green-500 text-white
+              transition-all duration-300 ease-in-out
+              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+              hover:scale-105 hover:shadow-lg"
               >
                 Choose Plan
               </Button>
@@ -93,7 +98,7 @@ export default function Pricing() {
       </div>
 
       <Typography variant="h4" className="text-center font-bold mb-8 text-green-800">
-        FULFILLMENT BY MERCHANT (FBM)
+        EDISON 3PL BY MERCHANT (EBM)
       </Typography>
 
       <div className="flex justify-center">
@@ -129,7 +134,12 @@ export default function Pricing() {
           <CardFooter className="pt-0 text-center">
             <Button
               variant="gradient"
-              className="bg-green-500 hover:bg-gradient-to-r from-green-300 to-green-500 text-white font-bold py-2 px-6 rounded-full shadow"
+              className="
+              px-6 py-3 font-semibold rounded-full
+              bg-gradient-to-r from-green-300 to-green-500 text-white
+              transition-all duration-300 ease-in-out
+              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+              hover:scale-105 hover:shadow-lg"
             >
               Choose Plan
             </Button>

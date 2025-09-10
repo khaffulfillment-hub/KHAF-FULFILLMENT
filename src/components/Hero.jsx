@@ -8,7 +8,7 @@ function Hero() {
         {/* Left Content */}
         <div className="flex-1 w-full">
           <div className="text-muted-foreground text-sm mb-1 tracking-wide font-medium">
-            LOGISTICS & FULFILLMENT
+            LOGISTICS & EDISON 3PL
           </div>
           <h1 className="text-[hsl(var(--foreground))] text-3xl md:text-4xl font-bold leading-tight mb-2">
             Transforming supply chains with speed,<br />precision, and intelligence.
