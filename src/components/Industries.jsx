@@ -27,7 +27,7 @@ function Industries() {
     dots: true,
     infinite: true,
     speed: 300, // Reduced speed for smoother transitions
-    slidesToShow: 3, // Default for large screens
+    slidesToShow: 1, // Default for small screens, responsive settings will override for larger screens
     slidesToScroll: 1,
     arrows: false,
     swipeToSlide: true,
