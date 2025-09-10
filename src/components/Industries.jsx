@@ -3,15 +3,21 @@ import Slider from 'react-slick'; // Import Slider
 import "slick-carousel/slick/slick.css"; // Import slick-carousel CSS
 import "slick-carousel/slick/slick-theme.css"; // Import slick-carousel theme CSS
 import IndustryCard from './IndustryCard';
+import eCommerceImage from '../assets/eCommerce.png';
+import retailImage from '../assets/Retail-1.png';
+import healthcareImage from '../assets/Healthcare.png';
+import electronicsImage from '../assets/Electronics.png';
+import foodImage from '../assets/Food.png';
+import industrialImage from '../assets/Industrial.png';
 
 function Industries() {
   const industryData = [
-    { name: "eCommerce", imageUrl: "/src/assets/eCommerce.png" },
-    { name: "Retail", imageUrl: "/src/assets/Retail-1.png" },
-    { name: "Healthcare", imageUrl: "/src/assets/Healthcare.png" },
-    { name: "Electronics", imageUrl: "/src/assets/Electronics.png" },
-    { name: "Food", imageUrl: "/src/assets/Food.png" },
-    { name: "Industrial", imageUrl: "/src/assets/Industrial.png" }
+    { name: "eCommerce", imageUrl: eCommerceImage },
+    { name: "Retail", imageUrl: retailImage },
+    { name: "Healthcare", imageUrl: healthcareImage },
+    { name: "Electronics", imageUrl: electronicsImage },
+    { name: "Food", imageUrl: foodImage },
+    { name: "Industrial", imageUrl: industrialImage }
   ];
 
   // Slider settings for three columns, auto-playing slider
