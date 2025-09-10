@@ -10,19 +10,17 @@ import {
 
 function IndustryCard({ name, imageUrl }) {
   return (
-    // Added transition for smooth scaling effect from the slider
-    <Card className="w-full"> 
+    <Card className="w-full h-full flex flex-col">
       <CardHeader shadow={false} floated={false} className="h-48">
         <img
           src={imageUrl}
           alt={name}
-          // The 'gap-2' class has no effect on an img tag, so it was removed
           className="h-full w-full object-cover"
         />
       </CardHeader>
-      <CardBody>
+      <CardBody className="flex-grow">
         <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium text-lg whitespace-nowrap">
+          <Typography color="blue-gray" className="font-medium text-lg">
             {name}
           </Typography>
         </div>

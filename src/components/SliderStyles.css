@@ -1,62 +1,31 @@
-/* Basic styles for the slider */
+/* Styles for the react-slick slider container */
 .slider-container {
   width: 100%;
-  overflow: hidden;
-  position: relative;
+  margin: 0 auto;
 }
 
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+/* Custom styles for the navigation dots */
+.slick-dots {
+  bottom: -40px; /* Position dots below the slider */
 }
 
-.slide {
-  min-width: 100%;
-  box-sizing: border-box;
+.slick-dots li {
+  margin: 0 8px; /* Add space between dots */
 }
 
-.slide img {
-  width: 100%;
-  height: auto;
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #a0aec0; /* A neutral gray for inactive dots */
+  opacity: 0.75;
+  transition: all 0.3s ease;
 }
 
-.slider-controls {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-  box-sizing: border-box;
+.slick-dots li.slick-active button:before {
+  color: #39ff14; /* Your neon-green for the active dot */
+  opacity: 1;
 }
 
-.slider-controls button {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 1.5em;
-}
-
-.slider-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 5px;
-}
-
-.slider-dots .dot {
-  width: 10px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.slider-dots .dot.active {
-  background-color: white;
+/* Ensure slides have some breathing room */
+.slick-slide > div {
+  padding: 0 8px;
 }

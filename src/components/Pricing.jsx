@@ -32,7 +32,7 @@ const tiers = [
 ];
 
 const fbm = {
-  scale: "EDISON 3PL BY MERCHANT (FBM)",
+  scale: "KHAF FULFILLMENT BY MERCHANT (FBM)",
   price: "$2.25",
   features: ["Receiving & Inspection", "Labeling", "Box Label", "Forwarding"],
 };
@@ -45,7 +45,7 @@ export default function Pricing() {
       </Typography>
 
       <Typography variant="h4" className="text-center font-bold mb-12 text-green-800">
-        EDISON 3PL BY AMAZON
+        KHAF FULFILLMENT BY AMAZON
       </Typography>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto mb-16 justify-items-center">
@@ -98,7 +98,7 @@ export default function Pricing() {
       </div>
 
       <Typography variant="h4" className="text-center font-bold mb-8 text-green-800">
-        EDISON 3PL BY MERCHANT (EBM)
+        KHAF FULFILLMENT BY MERCHANT (EBM)
       </Typography>
 
       <div className="flex justify-center">

@@ -8,13 +8,13 @@ function Hero() {
         {/* Left Content */}
         <div className="flex-1 w-full">
           <div className="text-muted-foreground text-sm mb-1 tracking-wide font-medium">
-            LOGISTICS & EDISON 3PL
+            LOGISTICS & KHAF FULFILLMENT
           </div>
           <h1 className="text-[hsl(var(--foreground))] text-3xl md:text-4xl font-bold leading-tight mb-2">
             Transforming supply chains with speed,<br />precision, and intelligence.
           </h1>
           <p className="text-muted-foreground text-base mb-6 max-w-xl">
-            EDISON 3PL is an accomplished 3PL partner based in the US, dedicated to enhancing supply chain effectiveness and logistics performance for companies of all sizes.
+            KHAF FULFILLMENT is an accomplished 3PL partner based in the US, dedicated to enhancing supply chain effectiveness and logistics performance for companies of all sizes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="
@@ -38,7 +38,7 @@ function Hero() {
         <div className="flex-1 flex items-center justify-center w-full">
           <img
             src={TruckLogo}
-            alt="EDISON 3PL Logo Truck"
+            alt="KHAF FULFILLMENT Logo Truck"
             className="w-[320px] max-w-full"
             style={{
               filter: 'drop-shadow(0 0 12px hsl(var(--accent)) / 0.8)',
