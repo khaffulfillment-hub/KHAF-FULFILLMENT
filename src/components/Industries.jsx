@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -22,6 +22,22 @@ function Industries() {
     { name: "Food", imageUrl: foodImage },
     { name: "Industrial", imageUrl: industrialImage }
   ];
+
+  const [sliderKey, setSliderKey] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSliderKey(prevKey => prevKey + 1);
+    };
+
+    window.addEventListener('resize', handleResize);
+    // Initial call to set the correct key based on initial window size
+    handleResize(); 
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const settings = {
     dots: true,
@@ -76,7 +92,7 @@ function Industries() {
         <h2 className="text-4xl font-bold text-center mb-12 text-neon-green">Industries We Serve</h2>
         
         <div className="slick-container">
-          <Slider {...settings}>
+          <Slider key={sliderKey} {...settings}>
             {industryData.map((industry, index) => (
               <div key={index} className="px-2"> 
                 <IndustryCard name={industry.name} imageUrl={industry.imageUrl} />
