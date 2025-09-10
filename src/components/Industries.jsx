@@ -1,7 +1,7 @@
 import React from 'react';
-import Slider from 'react-slick'; // Import Slider
-import "slick-carousel/slick/slick.css"; // Import slick-carousel CSS
-import "slick-carousel/slick/slick-theme.css"; // Import slick-carousel theme CSS
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import IndustryCard from './IndustryCard';
 import eCommerceImage from '../assets/eCommerce.png';
 import retailImage from '../assets/Retail-1.png';
@@ -9,6 +9,9 @@ import healthcareImage from '../assets/Healthcare.png';
 import electronicsImage from '../assets/Electronics.png';
 import foodImage from '../assets/Food.png';
 import industrialImage from '../assets/Industrial.png';
+
+// Import your custom CSS for the slider
+import './SliderStyles.css';
 
 function Industries() {
   const industryData = [
@@ -20,61 +23,77 @@ function Industries() {
     { name: "Industrial", imageUrl: industrialImage }
   ];
 
-  // Slider settings for three columns, auto-playing slider
   const settings = {
-    dots: true, // Show dots for navigation
-    infinite: true, // Loop the slider
-    speed: 500, // Transition speed
-    slidesToShow: 3, // Show three slides at a time
-    slidesToScroll: 1, // Scroll one slide at a time
-    autoplay: true, // Enable autoplay
-    autoplaySpeed: 3000, // Autoplay speed in ms
-    arrows: false, // Hide arrows for a cleaner look, rely on dots for navigation
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Default for large screens
+    slidesToScroll: 1,
+    arrows: false,
+    swipeToSlide: true,
+    draggable: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1024, // For large screens
+        // Extra large devices: 2 cards
+        breakpoint: 1200, // Custom breakpoint for very large screens
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        // Large devices: 3 cards
+        breakpoint: 1024, // Tailwind's lg breakpoint
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-          arrows: false
         }
       },
       {
-        breakpoint: 600, // For medium screens
+        // Mid devices: 2 cards, starting from 820px as per user feedback
+        // react-slick breakpoint is max-width, so this applies up to 819px
+        breakpoint: 819, 
         settings: {
-          slidesToShow: 2, // Show two slides for medium screens
+          slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 1,
-          dots: true,
-          arrows: false
         }
       },
       {
-        breakpoint: 480, // For small screens
+        // Mobile devices: 1 card
+        breakpoint: 480, // Standard breakpoint for smaller mobile
         settings: {
-          slidesToShow: 1, // Show one slide for small screens
+          slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true,
-          arrows: false
+        }
+      },
+      {
+        // Very small mobile devices: 1 card
+        breakpoint: 320, 
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         }
       }
     ]
   };
 
   return (
-    <section id="industries" className="bg-charcoal text-cream py-16 px-8 pt-24">
-      <div className="max-w-6xl mx-auto">
+    <section id="industries" className="bg-charcoal text-cream py-16 px-8 pt-24"> {/* Added px-8 for consistency */}
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-neon-green">Industries We Serve</h2>
-        {/* Wrap the cards in the Slider component */}
-        <Slider {...settings}>
-          {industryData.map((industry, index) => (
-            <div key={index} className="px-1 mr-4"> {/* Add padding for spacing between slides */}
-              <IndustryCard name={industry.name} imageUrl={industry.imageUrl} />
-            </div>
-          ))}
-        </Slider>
+        
+        <div className="slick-container">
+          <Slider {...settings}>
+            {industryData.map((industry, index) => (
+              <div key={index} className="px-2"> 
+                <IndustryCard name={industry.name} imageUrl={industry.imageUrl} />
+              </div>
+            ))}
+          </Slider>
+        </div>
+
       </div>
     </section>
   );

@@ -10,20 +10,21 @@ import {
 
 function IndustryCard({ name, imageUrl }) {
   return (
-    <Card className="w-96"> {/* Adjust width as needed */}
-      <CardHeader shadow={false} floated={false} className="h-48"> {/* Adjust height as needed */}
+    // Added transition for smooth scaling effect from the slider
+    <Card className="w-full"> 
+      <CardHeader shadow={false} floated={false} className="h-48">
         <img
           src={imageUrl}
           alt={name}
-          className="h-full w-full object-cover gap-2"
+          // The 'gap-2' class has no effect on an img tag, so it was removed
+          className="h-full w-full object-cover"
         />
       </CardHeader>
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium text-lg"> {/* Adjust text size */}
+          <Typography color="blue-gray" className="font-medium text-lg">
             {name}
           </Typography>
-          {/* Price is not applicable here, so it's removed */}
         </div>
         <Typography
           variant="small"

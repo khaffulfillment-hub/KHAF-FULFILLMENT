@@ -32,7 +32,8 @@ function Services() {
     <section id="services" className="bg-green-50 py-16 px-6 md:px-12 pt-24"> {/* Changed background and padding */}
       <div className="max-w-7xl mx-auto"> {/* Adjusted max-width to match pricing */}
         <Typography variant="h2" className="text-center font-bold mb-6 text-green-900">Our Services</Typography> {/* Changed heading style */}
-        <div className="flex flex-col md:flex-row justify-center gap-10"> {/* Changed layout to flex and adjusted gap */}
+        {/* Changed layout to grid for responsive card display */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> 
           {services.map((service, index) => (
             <ServiceCard
               key={index}

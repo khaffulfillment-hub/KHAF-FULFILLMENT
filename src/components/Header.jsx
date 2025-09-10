@@ -56,7 +56,7 @@ function Header({ onOpenPopup }) {
 
         {/* Desktop Navigation with Animation */}
         <nav 
-          className="hidden md:flex items-center ml-[200px] gap-4"
+          className="hidden md:flex items-center lg:ml-[200px] gap-4"
           onMouseLeave={() => setHoveredItem(null)}
         >
           <NavigationMenu>
