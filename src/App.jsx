@@ -19,16 +19,15 @@ export default function App() {
 
   return (
     <div className="bg-background text-foreground min-h-screen"> 
-      {/* ✅ Use Tailwind tokens */}
       <Header onOpenPopup={handleOpenPopup} />
       <main className="pt-20">
         <Hero />
         <About />
         <Services />
         <Industries />
-        <Contact />
         <Pricing />
-        <TeamSection />
+        {/* <TeamSection /> */}
+        <Contact />
       </main>
       <Footer />
       <PopupForm isOpen={isPopupOpen} onClose={handleClosePopup} />

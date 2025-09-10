@@ -36,7 +36,7 @@ function About() {
   const headline = "The Future of Fulfillment is Here.";
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50/50">
+    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-[hsl(var(--background))]">
       <motion.div 
         className="max-w-4xl mx-auto text-center"
         variants={sectionVariants}
