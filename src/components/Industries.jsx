@@ -43,13 +43,14 @@ function Industries() {
   };
 
   const industryData = [
-    { name: "eCommerce", imageUrl: eCommerceImage },
-    { name: "Retail", imageUrl: retailImage },
-    { name: "Healthcare", imageUrl: healthcareImage },
-    { name: "Electronics", imageUrl: electronicsImage },
-    { name: "Food", imageUrl: foodImage },
-    { name: "Industrial", imageUrl: industrialImage }
+    { name: "eCommerce", imageUrl: eCommerceImage, url: "https://en.wikipedia.org/wiki/E-commerce" },
+    { name: "Retail", imageUrl: retailImage, url: "https://en.wikipedia.org/wiki/Retail" },
+    { name: "Healthcare", imageUrl: healthcareImage, url: "https://en.wikipedia.org/wiki/Healthcare" },
+    { name: "Electronics", imageUrl: electronicsImage, url: "https://en.wikipedia.org/wiki/Electronics" },
+    { name: "Food", imageUrl: foodImage, url: "https://en.wikipedia.org/wiki/Food_industry" },
+    { name: "Industrial", imageUrl: industrialImage, url: "https://this-is-a-dead-url.com" }
   ];
+
 
   return (
     <section id="industries" className="py-24 px-4 sm:px-6 lg:px-8 bg-green-50">
@@ -61,7 +62,7 @@ function Industries() {
           <Slider {...settings}>
             {industryData.map((industry, index) => (
               <div key={index} className="px-3 py-4">
-                <IndustryCard name={industry.name} imageUrl={industry.imageUrl} />
+                <IndustryCard name={industry.name} imageUrl={industry.imageUrl} url={industry.url} />
               </div>
             ))}
           </Slider>

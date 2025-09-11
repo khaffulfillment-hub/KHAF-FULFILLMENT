@@ -9,7 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { motion } from 'framer-motion';
 
-function IndustryCard({ name, imageUrl }) {
+function IndustryCard({ name, imageUrl, url }) {
   return (
     <motion.div whileHover={{ y: -10 }}>
       <Card className="w-full h-full flex flex-col bg-white/60 backdrop-blur-lg border border-white/30 shadow-xl rounded-2xl overflow-hidden">
@@ -29,6 +29,7 @@ function IndustryCard({ name, imageUrl }) {
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
+          <a href={url} target="_blank" rel="noopener noreferrer">
           <Button
             ripple={false}
             fullWidth={true}
@@ -36,6 +37,7 @@ function IndustryCard({ name, imageUrl }) {
           >
             Learn More
           </Button>
+          </a>
         </CardFooter>
       </Card>
     </motion.div>
