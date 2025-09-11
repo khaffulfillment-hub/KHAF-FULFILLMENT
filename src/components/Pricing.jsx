@@ -1,5 +1,5 @@
 // src/components/Pricing.jsx
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -12,6 +12,9 @@ import {
   ListItemPrefix,
 } from "@material-tailwind/react";
 import CheckIcon from "@heroicons/react/24/outline/CheckIcon";
+// Import all three forms and the Modal component
+import Modal from './Modal';
+import GetAQuoteForm from './GetAQuoteForm';
 
 const tiers = [
   {
@@ -38,6 +41,8 @@ const fbm = {
 };
 
 export default function Pricing() {
+  const [activeModal, setActiveModal] = useState(null); // State to manage which modal is open: 'quote', 'partner', 'track', or null
+
   return (
     <section id="pricing" className="bg-green-50 py-16 px-6 md:px-12 pt-24">
       <Typography variant="h2" className="text-center font-bold mb-6 text-green-900">
@@ -83,12 +88,13 @@ export default function Pricing() {
             <CardFooter className="pt-0 text-center">
               <Button
                 variant="gradient"
-              className="
-              px-6 py-3 font-semibold rounded-full
-              bg-gradient-to-r from-green-300 to-green-500 text-white
-              transition-all duration-300 ease-in-out
-              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
-              hover:scale-105 hover:shadow-lg"
+                onClick={() => setActiveModal('quote')} // Call toggleForm when button is clicked
+                className="
+                px-6 py-3 font-semibold rounded-full
+                bg-gradient-to-r from-green-300 to-green-500 text-white
+                transition-all duration-300 ease-in-out
+                hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+                hover:scale-105 hover:shadow-lg"
               >
                 Choose Plan
               </Button>
@@ -133,7 +139,7 @@ export default function Pricing() {
           </CardBody>
           <CardFooter className="pt-0 text-center">
             <Button
-              variant="gradient"
+              onClick={() => setActiveModal('quote')}
               className="
               px-6 py-3 font-semibold rounded-full
               bg-gradient-to-r from-green-300 to-green-500 text-white
@@ -146,6 +152,11 @@ export default function Pricing() {
           </CardFooter>
         </Card>
       </div>
+      {/* Modal for "Get a Quote" */}
+      <Modal isOpen={activeModal === 'quote'} onClose={() => setActiveModal(null)}>
+        <GetAQuoteForm />
+      </Modal>
     </section>
+    
   );
 }
