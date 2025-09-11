@@ -31,8 +31,8 @@ function Footer() {
             <Typography variant="h5" className="font-bold mb-4 text-green-700">
               Khaf Fulfillment
             </Typography>
-            <Typography variant="small" className="text-gray-600">
-              Transforming supply chains with speed, precision, and intelligent automation for businesses of all sizes.
+            <Typography variant="small" className="text-gray-600 text-justify hover:text-green-600 transition-colors duration-300">
+              As a reliable and trusted 3PL partner, we are dedicated to transforming supply chains with speed, precision, and intelligent automation. Our services are engineered to support businesses of all sizes, ensuring your logistics operate with maximum efficiency and accuracy from start to finish.
             </Typography>
           </div>
 
@@ -58,10 +58,10 @@ function Footer() {
               Our Services
             </Typography>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">eCommerce Fulfillment</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Retail Logistics</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Warehouse Management</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Freight Services</a></li>
+              <li><a href="#industries" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">eCommerce Fulfillment</a></li>
+              <li><a href="#industries" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Retail Logistics</a></li>
+              <li><a href="#industries" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Warehouse Management</a></li>
+              <li><a href="#industries" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Freight Services</a></li>
             </ul>
           </div>
 
@@ -70,10 +70,10 @@ function Footer() {
             <Typography variant="h6" className="font-semibold text-gray-700 mb-4">
               Contact Us
             </Typography>
-            <ul className="space-y-3 text-gray-600">
-              <li>Jacksonville, FL</li>
-              <li>(954) 759-1783</li>
-              <li>info@khaffulfillment.com</li>
+            <ul className="space-y-3 text-gray-600 ">
+              <li className='hover:text-green-600 transition-colors duration-300'>Edison, NJ</li>
+              <li className='hover:text-green-600 transition-colors duration-300'>+1 (347) 217-5150</li>
+              <li className='hover:text-green-600 transition-colors duration-300'>Khaf.fulfillment@gmail.com</li>
             </ul>
           </div>
 

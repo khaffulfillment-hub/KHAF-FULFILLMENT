@@ -52,7 +52,7 @@ function Industries() {
   ];
 
   return (
-    <section id="industries" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50/50">
+    <section id="industries" className="py-24 px-4 sm:px-6 lg:px-8 bg-green-50">
       <div className="max-w-7xl mx-auto">
         <Typography variant="h2" color="blue-gray" className="text-4xl font-bold text-center mb-16">
           Industries We Serve
