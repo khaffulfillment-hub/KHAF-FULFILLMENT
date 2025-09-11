@@ -47,7 +47,7 @@ function ContactInfo() {
         className="mt-8 rounded-lg overflow-hidden border-2 border-green-500/30"
       >
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1947413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f42894565651%3A0x6323a623f9543e5c!2sNational%20Monument!5e0!3m2!1sen!2sid!4v1622533722979!5m2!1sen!2sid"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48532.13789255319!2d-74.38315295000001!3d40.513774500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3c80da7310807%3A0x9745de6099de48e9!2sEdison%2C%20NJ%2008817%2C%20USA!5e0!3m2!1sen!2sin!4v1757601755939!5m2!1sen!2sin"
           width="100%"
           height="250"
           style={{ border: 0 }}
