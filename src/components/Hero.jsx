@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import TruckLogo from '../assets/new-logo.png'; // Or PNG if SVG not available
+import TruckLogo from '../assets/new-logo.png';
 
-// Import the modal and form components
+// Import all three forms and the Modal component
 import Modal from './Modal';
 import GetAQuoteForm from './GetAQuoteForm';
 import PartnerWithUsForm from './PartnerWithUsForm';
+import TrackShipmentForm from './TrackShipmentForm';
 
 function Hero() {
-  // State to manage which modal is open: 'quote', 'partner', or null
+  // State to manage which modal is open: 'quote', 'partner', 'track', or null
   const [activeModal, setActiveModal] = useState(null);
 
   return (
@@ -27,7 +28,7 @@ function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={() => setActiveModal('quote')} // <-- ADD THIS
+                onClick={() => setActiveModal('quote')}
                 className="
                   px-6 py-3 font-semibold rounded-lg
                   bg-gradient-to-r from-green-300 to-green-500 text-white
@@ -37,11 +38,13 @@ function Hero() {
                 ">
                 Get a Quote
               </button>
-              <button className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
+              <button 
+                onClick={() => setActiveModal('track')}
+                className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
                 Track Shipment
               </button>
               <button
-                onClick={() => setActiveModal('partner')} // <-- ADD THIS
+                onClick={() => setActiveModal('partner')}
                 className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
                 Partner With Us
               </button>
@@ -61,7 +64,6 @@ function Hero() {
         </div>
       </section>
 
-      {/* MODAL IMPLEMENTATION */}
       {/* Modal for "Get a Quote" */}
       <Modal isOpen={activeModal === 'quote'} onClose={() => setActiveModal(null)}>
         <GetAQuoteForm />
@@ -70,6 +72,11 @@ function Hero() {
       {/* Modal for "Partner With Us" */}
       <Modal isOpen={activeModal === 'partner'} onClose={() => setActiveModal(null)}>
         <PartnerWithUsForm />
+      </Modal>
+      
+      {/* Modal for "Track Shipment" */}
+      <Modal isOpen={activeModal === 'track'} onClose={() => setActiveModal(null)}>
+        <TrackShipmentForm />
       </Modal>
     </>
   );

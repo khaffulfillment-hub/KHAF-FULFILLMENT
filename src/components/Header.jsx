@@ -11,6 +11,11 @@ import { MenuIcon, XIcon } from "lucide-react";
 import { cn } from "../lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Import all three forms and the Modal component
+import Modal from './Modal';
+import GetAQuoteForm from './GetAQuoteForm';
+import TrackShipmentForm from './TrackShipmentForm';
+
 // Define navigation items for easier mapping
 const navItems = ["home", "about", "services", "industries", "contact", "pricing"];
 
@@ -18,6 +23,8 @@ function Header({ onOpenPopup }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
+  // State to manage which modal is open: 'quote', 'partner', 'track', or null
+  const [activeModal, setActiveModal] = useState(null);
 
   // Effect to handle scroll-based styling
   useEffect(() => {
@@ -104,11 +111,13 @@ function Header({ onOpenPopup }) {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Button variant="outline" className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
+              <Button variant="outline" 
+                onClick={() => setActiveModal('track')}
+                className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
                 Track Shipment
               </Button>
               <Button
-                onClick={onOpenPopup}
+                onClick={() => setActiveModal('quote')}
                 className="
               px-6 py-3 font-semibold rounded-lg
               bg-gradient-to-r from-green-300 to-green-500 text-white
@@ -191,11 +200,13 @@ function Header({ onOpenPopup }) {
               </motion.nav>
 
               <div className="mt-12 pt-8 border-t border-green-200 flex flex-col space-y-4">
-                <Button variant="outline" className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
+                <Button variant="outline" 
+                  onClick={() => setActiveModal('track')}
+                  className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
                   Track Shipment
                 </Button>
                 <Button
-                  onClick={() => closeMenuAndAction(onOpenPopup)}
+                  onClick={() => setActiveModal('quote')}
                   className="
                   px-6 py-3 font-semibold rounded-lg
                   bg-gradient-to-r from-green-300 to-green-500 text-white
@@ -210,6 +221,14 @@ function Header({ onOpenPopup }) {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* Modal for "Get a Quote" */}
+      <Modal isOpen={activeModal === 'quote'} onClose={() => setActiveModal(null)}>
+        <GetAQuoteForm />
+      </Modal>
+      {/* Modal for "Track Shipment" */}
+      <Modal isOpen={activeModal === 'track'} onClose={() => setActiveModal(null)}>
+        <TrackShipmentForm />
+      </Modal>
     </>
   );
 }

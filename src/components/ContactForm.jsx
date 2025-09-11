@@ -12,15 +12,36 @@ function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  // This is the only part that has been updated.
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // ... (rest of the submit logic remains the same)
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setSubmitSuccess(false), 5000);
+
+    try {
+      const response = await fetch("https://formsubmit.co/rkcrater7@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setFormData({ name: '', email: '', message: '' }); // Reset form fields
+        setTimeout(() => setSubmitSuccess(false), 5000); // Hide success message after 5 seconds
+      } else {
+        // You can add error handling here if you want
+        console.error("Form submission failed.");
+        // Optionally, show an error message to the user
+      }
+    } catch (error) {
+      console.error("An error occurred during form submission:", error);
+       // Optionally, show an error message to the user
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -49,8 +70,9 @@ function ContactForm() {
               px-6 py-3 w-full font-semibold rounded-lg
               bg-gradient-to-r from-green-300 to-green-500 text-white
               transition-all duration-300 ease-in-out
+              flex items-center justify-center
               hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
-              hover:scale-105 hover:shadow-lg
+              hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:scale-100
             ">
           {isSubmitting ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" />Sending...</> : 'Send Message'}
         </button>
