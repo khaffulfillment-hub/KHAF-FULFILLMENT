@@ -13,7 +13,7 @@ function Hero() {
 
   return (
     <>
-      <section className="w-full min-h-[350px] bg-[hsl(var(--background))] flex items-center justify-center px-8 py-12">
+      <section id ="hero" className="py-24 px-4 sm:px-6 lg:px-8 w-full min-h-[350px] bg-[hsl(var(--background))] flex items-center justify-center">
         <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
           {/* Left Content */}
           <div className="flex-1 w-full">

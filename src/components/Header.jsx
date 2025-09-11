@@ -17,9 +17,16 @@ import GetAQuoteForm from './GetAQuoteForm';
 import TrackShipmentForm from './TrackShipmentForm';
 
 // Define navigation items for easier mapping
-const navItems = ["home", "about", "services", "industries", "contact", "pricing"];
+const navItems = [
+  { text: "Home", id: "hero" },
+  { text: "About", id: "about" },
+  { text: "Services", id: "services" },
+  { text: "Industries", id: "industries" },
+  { text: "Contact", id: "contact" },
+  { text: "Pricing", id: "pricing" },
+];
 
-function Header({ onOpenPopup }) {
+function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -48,10 +55,6 @@ function Header({ onOpenPopup }) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const closeMenuAndAction = (action) => {
-    toggleMobileMenu();
-    if (action) action();
-  };
 
   return (
     <>
@@ -75,25 +78,25 @@ function Header({ onOpenPopup }) {
             </div>
 
             {/* Desktop Navigation */}
-            <nav 
+            <nav
               className="hidden lg:flex items-center gap-2"
               onMouseLeave={() => setHoveredItem(null)}
             >
               <NavigationMenu>
                 <NavigationMenuList className="flex items-center gap-1 relative">
                   {navItems.map((item) => (
-                    <NavigationMenuItem 
-                      key={item}
-                      onMouseEnter={() => setHoveredItem(item)}
+                    <NavigationMenuItem
+                      key={item.id}
+                      onMouseEnter={() => setHoveredItem(item.id)}
                       className="relative"
                     >
                       <NavigationMenuLink
-                        href={`#${item}`}
+                        href={`#${item.id}`}
                         className="px-4 py-2 text-foreground hover:text-white relative z-10 transition-colors duration-300"
                       >
-                        {item.charAt(0).toUpperCase() + item.slice(1)}
+                        {item.text}
                       </NavigationMenuLink>
-                      {hoveredItem === item && (
+                      {hoveredItem === item.id && (
                         <motion.div
                           layoutId="hoverBackground"
                           initial={{ opacity: 0 }}
@@ -111,7 +114,7 @@ function Header({ onOpenPopup }) {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Button variant="outline" 
+              <Button variant="outline"
                 onClick={() => setActiveModal('track')}
                 className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
                 Track Shipment
@@ -181,18 +184,18 @@ function Header({ onOpenPopup }) {
                 <ul className="flex flex-col space-y-2">
                   {navItems.map((item) => (
                     <motion.li
-                      key={item}
+                      key={item.id}
                       variants={{
                         open: { y: 0, opacity: 1, transition: { y: { stiffness: 1000, velocity: -100 } } },
                         closed: { y: 50, opacity: 0, transition: { y: { stiffness: 1000 } } }
                       }}
                     >
                       <a
-                        href={`#${item}`}
+                        href={`#${item.id}`}
                         onClick={toggleMobileMenu}
                         className="block py-3 text-2xl font-semibold text-foreground hover:text-primary transition-colors"
                       >
-                        {item.charAt(0).toUpperCase() + item.slice(1)}
+                        {item.text}
                       </a>
                     </motion.li>
                   ))}
@@ -200,7 +203,7 @@ function Header({ onOpenPopup }) {
               </motion.nav>
 
               <div className="mt-12 pt-8 border-t border-green-200 flex flex-col space-y-4">
-                <Button variant="outline" 
+                <Button variant="outline"
                   onClick={() => setActiveModal('track')}
                   className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
                   Track Shipment
