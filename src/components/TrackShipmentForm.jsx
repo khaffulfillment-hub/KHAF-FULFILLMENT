@@ -10,6 +10,7 @@ import RoyalMailLogo from '../assets/logos/royal-mail.png';
 import CanadaPostLogo from '../assets/logos/canada-post.png';
 import IndiaPostLogo from '../assets/logos/india-post.png';
 import BlueDartLogo from '../assets/logos/blue-dart.png';
+import ShipBobLogo from '../assets/logos/ShipBobLogo.png';
 
 // --- Carrier Data with Auto-Fill URL Templates ---
 // The key here is the `trackUrlTemplate` which includes the query parameter.
@@ -25,6 +26,7 @@ const internationalCarriers = [
   { name: 'DHL Express', trackUrlTemplate: 'https://www.dhl.com/global-en/home/tracking.html?tracking-id=', logo: DhlLogo },
   { name: 'Royal Mail', trackUrlTemplate: 'https://www.royalmail.com/track-your-item#/', logo: RoyalMailLogo },
   { name: 'Canada Post', trackUrlTemplate: 'https://www.canadapost-postescanada.ca/track-reperage/en#/search?searchFor=', logo: CanadaPostLogo },
+  { name: 'ShipBob', trackUrlTemplate: 'https://track.shipbob.com/?tracking=', logo: ShipBobLogo }  
 ];
 
 
@@ -80,7 +82,7 @@ function TrackShipmentForm() {
     } else {
       // If no carrier is selected, fall back to a general Google search.
       alert('Please select a carrier first for specific tracking.');
-      window.open(`https://www.google.com/search?q=${encodeURIComponent(id + ' tracking')}`, '_blank', 'noopener,noreferrer');
+      return;
     }
   };
 
@@ -114,9 +116,9 @@ function TrackShipmentForm() {
       
       <div className="space-y-8">
         <div>
-          <h3 className="mb-4 text-sm font-bold tracking-wider text-center text-gray-500 uppercase">
+          {/*<h3 className="mb-4 text-sm font-bold tracking-wider text-center text-gray-500 uppercase">
             National Providers
-          </h3>
+          </h3>}*/}
           <div className="grid grid-cols-3 gap-4">
             {nationalCarriers.map((carrier) => (
               <CarrierCard 
@@ -130,9 +132,9 @@ function TrackShipmentForm() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-bold tracking-wider text-center text-gray-500 uppercase">
+          {/*<h3 className="mb-4 text-sm font-bold tracking-wider text-center text-gray-500 uppercase">
             International Providers
-          </h3>
+          </h3>*/}
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
             {internationalCarriers.map((carrier) => (
               <CarrierCard 

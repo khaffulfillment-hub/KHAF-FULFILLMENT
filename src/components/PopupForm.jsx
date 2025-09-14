@@ -12,23 +12,41 @@ function PopupForm({ isOpen, onClose }) {
     setIsSubmitting(true);
     setSubmitSuccess(false);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('http://localhost:5000/api/forms', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-    // In a real application, you would send this data to your backend API
-    console.log('Popup Form Data:', { name, email, message });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setName('');
-    setEmail('');
-    setMessage('');
+      // Assuming the backend returns some success indicator or data
+      const data = await response.json();
+      console.log('Form submission response:', data);
 
-    // Optionally, hide success message after a few seconds
-    setTimeout(() => {
-      setSubmitSuccess(false);
-      onClose(); // Close the modal after success
-    }, 5000);
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+      setName('');
+      setEmail('');
+      setMessage('');
+
+      // Optionally, hide success message after a few seconds
+      setTimeout(() => {
+        setSubmitSuccess(false);
+        onClose(); // Close the modal after success
+      }, 5000);
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmitting(false);
+      // Optionally, set an error state to show to the user
+      alert('Failed to send message. Please try again later.');
+    }
   };
 
   if (!isOpen) return null;

@@ -12,7 +12,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: <Facebook size={20} />, href: "https://facebook.com", label: "Facebook" },
+  { icon: <Facebook size={20} />, href: "https://www.facebook.com/share/1AFbpVTSam/", label: "Facebook" },
   { icon: <Twitter size={20} />, href: "https://twitter.com", label: "Twitter" },
   { icon: <Instagram size={20} />, href: "https://instagram.com", label: "Instagram" },
 ];
@@ -58,10 +58,10 @@ function Footer() {
               Our Services
             </Typography>
             <ul className="space-y-3">
-              <li><a href="#industries" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">eCommerce Fulfillment</a></li>
-              <li><a href="#industries" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Retail Logistics</a></li>
-              <li><a href="#industries" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Warehouse Management</a></li>
-              <li><a href="#industries" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Freight Services</a></li>
+              <li><a href="#services" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">eCommerce Fulfillment</a></li>
+              <li><a href="#services" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Retail Logistics</a></li>
+              <li><a href="#services" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Warehouse Management</a></li>
+              <li><a href="#services" className="text-gray-600 hover:text-green-600 font-medium transition-colors duration-300">Freight Services</a></li>
             </ul>
           </div>
 
@@ -73,7 +73,7 @@ function Footer() {
             <ul className="space-y-3 text-gray-600 ">
               <li className='hover:text-green-600 transition-colors duration-300'>Edison, NJ</li>
               <li className='hover:text-green-600 transition-colors duration-300'>+1 (347) 217-5150</li>
-              <li className='hover:text-green-600 transition-colors duration-300'>Khaf.fulfillment@gmail.com</li>
+              <li className='hover:text-green-600 transition-colors duration-300'>khaf.fulfillment@gmail.com</li>
             </ul>
           </div>
 

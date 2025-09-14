@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const contactItems = [
-  { icon: <Mail className="w-6 h-6 text-green-500" />, title: "Email Us", content: "Khaf.fulfillment@gmail.com", href: "mailto:Khaf.fulfillment@gmail.com" },
+  { icon: <Mail className="w-6 h-6 text-green-500" />, title: "Email Us", content: "khaf.fulfillment@gmail.com", href: "mailto:khaf.fulfillment@gmail.com" },
   { icon: <Phone className="w-6 h-6 text-green-500" />, title: "Call Us", content: "+1 (347) 217-5150", href: "tel:+1 (347) 217-5150" },
   { icon: <MapPin className="w-6 h-6 text-green-500" />, title: "Find Us", content: "Edison, NJ 08817", href: "https://maps.app.goo.gl/BBwS739DFqUKpJga6" }
 ];

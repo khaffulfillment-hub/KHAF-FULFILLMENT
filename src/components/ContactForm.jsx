@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Loader2, CheckCircle } from 'lucide-react';
 
 function ContactForm() {
@@ -12,31 +11,41 @@ function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // This is the only part that has been updated.
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/rkcrater7@gmail.com", {
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        // Ensure phone is included, even if empty, to satisfy Joi validation for optional fields
+        phone: formData.phone || '', 
+        message: formData.message
+      };
+
+      // eslint-disable-next-line no-undef
+      const response = await fetch("http://localhost:5000/api/forms/contact", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
       if (response.ok) {
         setSubmitSuccess(true);
         setFormData({ name: '', email: '', message: '' }); // Reset form fields
+        // eslint-disable-next-line no-undef
         setTimeout(() => setSubmitSuccess(false), 5000); // Hide success message after 5 seconds
       } else {
         // You can add error handling here if you want
+        // eslint-disable-next-line no-undef
         console.error("Form submission failed.");
         // Optionally, show an error message to the user
       }
     } catch (error) {
+      // eslint-disable-next-line no-undef
       console.error("An error occurred during form submission:", error);
        // Optionally, show an error message to the user
     } finally {
@@ -45,12 +54,7 @@ function ContactForm() {
   };
   
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-    >
+    <div>
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Input fields remain the same */}
         <div>
@@ -79,12 +83,12 @@ function ContactForm() {
       </form>
       {/* Success message remains the same */}
       {submitSuccess && (
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-4 flex items-center p-4 text-sm text-green-700 bg-green-100 rounded-lg">
+        <div className="mt-4 flex items-center p-4 text-sm text-green-700 bg-green-100 rounded-lg">
           <CheckCircle className="h-5 w-5 mr-3" />
           Message sent successfully! We'll get back to you soon.
-        </motion.div>
+        </div>
       )}
-    </motion.div>
+    </div>
   );
 }
 

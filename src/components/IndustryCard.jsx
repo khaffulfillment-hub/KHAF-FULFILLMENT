@@ -9,7 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { motion } from 'framer-motion';
 
-function IndustryCard({ name, imageUrl, url }) {
+function IndustryCard({ name, imageUrl, url , description }) {
   return (
     <motion.div whileHover={{ y: -10 }}>
       <Card className="w-full h-full flex flex-col bg-white/60 backdrop-blur-lg border border-white/30 shadow-xl rounded-2xl overflow-hidden">
@@ -25,7 +25,7 @@ function IndustryCard({ name, imageUrl, url }) {
             {name}
           </Typography>
           <Typography color="gray" className="font-normal opacity-80">
-            Learn more about our solutions for {name}.
+            {description}
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">

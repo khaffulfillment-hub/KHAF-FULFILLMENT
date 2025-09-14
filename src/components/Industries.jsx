@@ -43,12 +43,12 @@ function Industries() {
   };
 
   const industryData = [
-    { name: "eCommerce", imageUrl: eCommerceImage, url: "https://en.wikipedia.org/wiki/E-commerce" },
-    { name: "Retail", imageUrl: retailImage, url: "https://en.wikipedia.org/wiki/Retail" },
-    { name: "Healthcare", imageUrl: healthcareImage, url: "https://en.wikipedia.org/wiki/Healthcare" },
-    { name: "Electronics", imageUrl: electronicsImage, url: "https://en.wikipedia.org/wiki/Electronics" },
-    { name: "Food", imageUrl: foodImage, url: "https://en.wikipedia.org/wiki/Food_industry" },
-    { name: "Industrial", imageUrl: industrialImage, url: "https://this-is-a-dead-url.com" }
+    { name: "eCommerce", imageUrl: eCommerceImage, description: "Fast, scalable, and reliable fulfillment for online retail growth.", url: "https://en.wikipedia.org/wiki/E-commerce" },
+    { name: "Retail", imageUrl: retailImage, description: "Streamlined distribution for stores and omni-channel sales.", url: "https://en.wikipedia.org/wiki/Retail" },
+    { name: "Healthcare", imageUrl: healthcareImage, description: "Secure, compliant delivery for medical and pharma needs.", url: "https://en.wikipedia.org/wiki/Healthcare" },
+    { name: "Electronics", imageUrl: electronicsImage, description: "Reliable logistics for high-value tech and devices.", url: "https://en.wikipedia.org/wiki/Electronics" },
+    { name: "Food", imageUrl: foodImage, description: "Safe, efficient handling for perishable and packaged goods.", url: "https://en.wikipedia.org/wiki/Food_industry" },
+    { name: "Industrial", imageUrl: industrialImage, description: "Robust logistics for heavy equipment and manufacturing.", url: "https://this-is-a-dead-url.com" }
   ];
 
 
@@ -62,7 +62,7 @@ function Industries() {
           <Slider {...settings}>
             {industryData.map((industry, index) => (
               <div key={index} className="px-3 py-4">
-                <IndustryCard name={industry.name} imageUrl={industry.imageUrl} url={industry.url} />
+                <IndustryCard name={industry.name} imageUrl={industry.imageUrl} description={industry.description} url={industry.url} />
               </div>
             ))}
           </Slider>

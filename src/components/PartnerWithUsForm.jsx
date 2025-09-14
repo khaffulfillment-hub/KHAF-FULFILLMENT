@@ -21,15 +21,27 @@ function PartnerWithUsForm() {
   // --- Effects ---
   // Effect to close dropdown when clicking outside
   useEffect(() => {
-    function handleClickOutside(event) {
+    const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
     };
+
+    let removeListener = () => {};
+    let doc = null;
+
+    // Check if globalThis is available and has a document property
+    // This avoids direct reference to 'window' in the typeof check
+    if (typeof globalThis !== 'undefined' && typeof globalThis.window !== 'undefined' && globalThis.window.document) {
+      doc = globalThis.window.document;
+      doc.addEventListener("mousedown", handleClickOutside);
+      removeListener = () => {
+        doc.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+
+    // Return the cleanup function
+    return removeListener;
   }, [dropdownRef]);
 
   // --- Handlers ---
@@ -47,16 +59,55 @@ function PartnerWithUsForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Basic validation check
     if (!formData.contactName || !formData.email || !formData.companyName || selectedIndustries.length === 0) {
+      // eslint-disable-next-line no-undef
       alert("Please fill in all required fields: Name, Email, Company, and select at least one Industry.");
       return;
     }
-    // On successful submission
-    alert("Thank you for your interest in partnering with us! We will review your proposal and be in touch soon.");
-    console.log("Partnership Proposal Data:", { ...formData, industries: selectedIndustries });
+
+    const payload = {
+      name: formData.contactName,
+      email: formData.email,
+      phone: formData.contactNumber,
+      companyName: formData.companyName,
+      industries: selectedIndustries, // Assuming backend expects array of strings
+      estimatedUnits: formData.estimatedUnits,
+      comments: formData.comments,
+    };
+
+    try {
+      // FIX: Changed endpoint from '/api/partner' to '/api/forms/partner'
+      // eslint-disable-next-line no-undef
+      const response = await fetch('http://localhost:5000/api/forms/partner', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      // eslint-disable-next-line no-undef
+      console.log('Partnership Proposal Response:', data);
+      // eslint-disable-next-line no-undef
+      alert("Thank you for your interest in partnering with us! We will review your proposal and be in touch soon.");
+      // Optionally clear form or redirect
+      setFormData({ contactName: '', contactNumber: '', email: '', companyName: '', estimatedUnits: '', comments: '' });
+      setSelectedIndustries([]);
+
+    } catch (error) {
+      // eslint-disable-next-line no-undef
+      console.error('Error submitting partnership proposal:', error);
+      // eslint-disable-next-line no-undef
+      alert('Failed to submit proposal. Please try again later.');
+    }
   };
 
   return (
