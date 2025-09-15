@@ -19,7 +19,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5173",
-      "https://your-frontend-domain.com",
+      "https://edison3pl.vercel.app", // Added the actual frontend domain
     ],
     credentials: true,
   })
