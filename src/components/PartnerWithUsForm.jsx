@@ -81,7 +81,7 @@ function PartnerWithUsForm() {
     try {
       // FIX: Changed endpoint from '/api/partner' to '/api/forms/partner'
       // eslint-disable-next-line no-undef
-      const response = await fetch('http://localhost:5000/api/forms/partner', {
+      const response = await fetch('https://edison3pl-m6gx.vercel.app/api/forms/partner', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ function PopupForm({ isOpen, onClose }) {
     setSubmitSuccess(false);
 
     try {
-      const response = await fetch('http://localhost:5000/api/forms', {
+      const response = await fetch('https://edison3pl-m6gx.vercel.app/api/forms', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

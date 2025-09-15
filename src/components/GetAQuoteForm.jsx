@@ -172,7 +172,7 @@ function GetAQuoteForm() {
         };
         console.log('Payload before sending:', JSON.stringify(payload, null, 2)); // Added for debugging
         try {
-            const response = await fetch('http://localhost:5000/api/forms/quote', {
+            const response = await fetch('https://edison3pl-m6gx.vercel.app/api/forms/quote', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),

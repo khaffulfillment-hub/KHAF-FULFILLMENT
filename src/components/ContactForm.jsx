@@ -25,7 +25,7 @@ function ContactForm() {
       };
 
       // eslint-disable-next-line no-undef
-      const response = await fetch("http://localhost:5000/api/forms/contact", {
+      const response = await fetch("https://edison3pl-m6gx.vercel.app/api/forms/contact", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
