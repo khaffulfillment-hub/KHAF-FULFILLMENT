@@ -62,8 +62,8 @@ function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-blue-400/90 shadow-md backdrop-blur-lg border-b border-blue-300"
-            : "bg-blue-100/50"
+            ? "bg-blue-300/50 shadow-md backdrop-blur-lg border-b border-blue-400"
+            : "bg-blue-200/90"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

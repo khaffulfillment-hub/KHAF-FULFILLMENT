@@ -59,11 +59,11 @@ export default function Pricing() {
             key={tier.scale}
             shadow={true}
             color="white"
-            className="w-full rounded-3xl bg-white hover:scale-105 transition-transform duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-green-400/40 cursor-pointer"
+            className="w-full rounded-3xl bg-white hover:scale-105 transition-transform duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-blue-400/40 cursor-pointer"
           >
             <CardHeader
               variant="gradient"
-              color="green"
+              color="blue"
               className="rounded-3xl pt-6 pb-10 text-center bg-gradient-to-r from-green-150 to-blue-200 text-white"
             >
               <Typography variant="h6" className="font-extrabold text-blue-800">
@@ -71,7 +71,7 @@ export default function Pricing() {
               </Typography>
             </CardHeader>
             <CardBody className="text-center">
-              <Typography variant="h2" color="green" className="font-bold mb-6 text-blue-700">
+              <Typography variant="h2" color="blue" className="font-bold mb-6 text-blue-700">
                 {tier.price}
               </Typography>
               <List>
