@@ -70,7 +70,7 @@ function PopupForm({ isOpen, onClose }) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="shadow appearance-none border rounded w-full py-3 px-4 text-charcoal leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="shadow appearance-none border rounded w-full py-3 px-4 text-charcoal leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div className="mb-4">
@@ -81,7 +81,7 @@ function PopupForm({ isOpen, onClose }) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="shadow appearance-none border rounded w-full py-3 px-4 text-charcoal leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="shadow appearance-none border rounded w-full py-3 px-4 text-charcoal leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div className="mb-6">
@@ -92,7 +92,7 @@ function PopupForm({ isOpen, onClose }) {
               onChange={(e) => setMessage(e.target.value)}
               required
               rows="4"
-              className="shadow appearance-none border rounded w-full py-3 px-4 text-charcoal leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="shadow appearance-none border rounded w-full py-3 px-4 text-charcoal leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
           </div>
           <div className="flex items-center justify-center">
@@ -106,7 +106,7 @@ function PopupForm({ isOpen, onClose }) {
             </button>
           </div>
           {submitSuccess && (
-            <div className="mt-4 text-center text-green-400">
+            <div className="mt-4 text-center text-blue-400">
               Quote Request Sent!
             </div>
           )}

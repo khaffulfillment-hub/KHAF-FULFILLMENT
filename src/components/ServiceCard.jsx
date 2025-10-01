@@ -21,7 +21,7 @@ function ServiceCard({ title, description, cta, imageUrl, url }) {
         )}
       </CardHeader>
       <CardBody>
-        <Typography variant="h5" color="green" className="mb-2 text-neon-green">
+        <Typography variant="h5" color="blue" className="mb-2 text-blue-800">
           {title}
         </Typography>
         <Typography className="text-cream leading-relaxed">
@@ -33,7 +33,7 @@ function ServiceCard({ title, description, cta, imageUrl, url }) {
           <Button
             size="sm"
             variant="text"
-            className="flex items-center gap-2 text-neon-green font-semibold hover:underline"
+            className="flex items-center gap-2 text-blue-800 font-semibold hover:underline"
           >
             {cta} &rarr;
           </Button>

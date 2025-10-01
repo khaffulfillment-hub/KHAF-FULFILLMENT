@@ -172,7 +172,7 @@ function GetAQuoteForm() {
         };
         console.log('Payload before sending:', JSON.stringify(payload, null, 2)); // Added for debugging
         try {
-            const response = await fetch('https://edison3pl-m6gx.vercel.app/api/forms/quote', {
+            const response = await fetch('https://formspree.io/f/xdkwavko', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
@@ -195,7 +195,7 @@ function GetAQuoteForm() {
       <p className="mt-2 text-gray-600">Select your industries and enter unit counts for a customized price.</p>
 
       {message && (
-        <div className={`p-4 mb-4 rounded-lg ${messageType === 'error' ? 'bg-red-100 text-red-800 border border-red-400' : 'bg-green-100 text-green-800 border border-green-400'}`}>
+        <div className={`p-4 mb-4 rounded-lg ${messageType === 'error' ? 'bg-red-100 text-red-800 border border-red-400' : 'bg-blue-100 text-blue-800 border border-blue-400'}`}>
           {message}
         </div>
       )}
@@ -203,10 +203,10 @@ function GetAQuoteForm() {
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
         {/* Contact Fields */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <input type="text" id="fullName" value={formData.fullName} onChange={handleInputChange} placeholder="Full Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
-            <input type="email" id="email" value={formData.email} onChange={handleInputChange} placeholder="Email Address" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
-            <input type="tel" id="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone Number" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
-            <input type="text" id="companyName" value={formData.companyName} onChange={handleInputChange} placeholder="Company Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
+            <input type="text" id="fullName" value={formData.fullName} onChange={handleInputChange} placeholder="Full Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+            <input type="email" id="email" value={formData.email} onChange={handleInputChange} placeholder="Email Address" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+            <input type="tel" id="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone Number" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+            <input type="text" id="companyName" value={formData.companyName} onChange={handleInputChange} placeholder="Company Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
         </div>
         
         {/* Industry Multi-Selector */}
@@ -217,7 +217,7 @@ function GetAQuoteForm() {
             onClick={() => setDropdownOpen(!isDropdownOpen)}
           >
             {selectedIndustries.map(industry => (
-              <div key={industry} className="flex items-center gap-2 px-3 py-1 text-sm font-semibold text-white bg-green-600 rounded-full">
+              <div key={industry} className="flex items-center gap-2 px-3 py-1 text-sm font-semibold text-white bg-blue-600 rounded-full">
                 {industry}
                 <button
                   type="button"
@@ -269,7 +269,7 @@ function GetAQuoteForm() {
                   placeholder="e.g., 250"
                   min="0"
                   onKeyDown={(e) => { if (e.key === '-') e.preventDefault(); }}
-                  className="w-full px-4 py-3 mt-1 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
+                  className="w-full px-4 py-3 mt-1 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
                   required 
                 />
               </div>
@@ -279,7 +279,7 @@ function GetAQuoteForm() {
 
         {/* Quote Summary */}
         {totalUnits > 0 && (
-          <div className="p-6 space-y-4 bg-green-50 rounded-lg border border-green-200">
+          <div className="p-6 space-y-4 bg-blue-50 rounded-lg border border-blue-200">
             <h3 className="text-xl font-bold text-gray-800">Your Live Quote Summary</h3>
             <div className="flex justify-between items-center text-lg">
                 <p className="font-medium text-gray-600">Total Units:</p>
@@ -287,11 +287,11 @@ function GetAQuoteForm() {
             </div>
             <div className="flex justify-between items-center">
               <p className="font-medium text-gray-600">Pricing Tier:</p>
-              <p className="px-3 py-1 text-sm font-semibold text-green-800 bg-green-200 rounded-full">{calculatedScale}</p>
+              <p className="px-3 py-1 text-sm font-semibold text-blue-800 bg-blue-200 rounded-full">{calculatedScale}</p>
             </div>
-            <div className="flex justify-between items-center pt-4 border-t border-green-200">
+            <div className="flex justify-between items-center pt-4 border-t border-blue-200">
               <p className="text-lg font-bold text-gray-700">Estimated Total:</p>
-              <p className="text-3xl font-extrabold text-green-600">${totalPrice}</p>
+              <p className="text-3xl font-extrabold text-blue-600">${totalPrice}</p>
             </div>
           </div>
         )}
@@ -301,13 +301,13 @@ function GetAQuoteForm() {
           <button
             type="button"
             onClick={handleDownloadExcel}
-            className="w-full px-6 py-3 font-semibold text-white bg-gradient-to-r from-green-500 to-green-700 rounded-lg shadow-md hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full px-6 py-3 font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg shadow-md hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Download Quote as Excel
           </button>
           <button
             type="submit"
-            className="w-full px-6 py-3 font-semibold text-green-700 bg-white border-2 border-green-600 rounded-lg shadow-md hover:bg-green-50 transition-all duration-300"
+            className="w-full px-6 py-3 font-semibold text-blue-700 bg-white border-2 border-blue-600 rounded-lg shadow-md hover:bg-blue-50 transition-all duration-300"
           >
             Submit & Contact Us
           </button>

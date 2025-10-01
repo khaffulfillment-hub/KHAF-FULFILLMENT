@@ -25,10 +25,11 @@ function ContactForm() {
       };
 
       // eslint-disable-next-line no-undef
-      const response = await fetch("https://edison3pl-m6gx.vercel.app/api/forms/contact", {
+      const response = await fetch("https://formspree.io/f/xldpgkej", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(payload)
       });
@@ -58,24 +59,24 @@ function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Input fields remain the same */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-          <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-3 bg-white/50 border border-gray-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all duration-300 outline-none" placeholder="John Doe" />
+          <label htmlFor="name" className="block text-sm font-medium text-blue-800 mb-1">Full Name</label>
+          <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-3 bg-white/50 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-300 outline-none" placeholder="John Doe" />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-          <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 bg-white/50 border border-gray-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all duration-300 outline-none" placeholder="you@example.com" />
+          <label htmlFor="email" className="block text-sm font-medium text-blue-800 mb-1">Email Address</label>
+          <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 bg-white/50 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-300 outline-none" placeholder="you@example.com" />
         </div>
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-          <textarea name="message" id="message" rows="5" value={formData.message} onChange={handleChange} required className="w-full px-4 py-3 bg-white/50 border border-gray-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all duration-300 outline-none resize-none" placeholder="How can we help you?"></textarea>
+          <label htmlFor="message" className="block text-sm font-medium text-blue-800 mb-1">Message</label>
+          <textarea name="message" id="message" rows="5" value={formData.message} onChange={handleChange} required className="w-full px-4 py-3 bg-white/50 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-300 outline-none resize-none" placeholder="How can we help you?"></textarea>
         </div>
         {/* Submit button remains the same */}
         <button type="submit" disabled={isSubmitting} className="
               px-6 py-3 w-full font-semibold rounded-lg
-              bg-gradient-to-r from-green-300 to-green-500 text-white
+              bg-gradient-to-r from-blue-500 to-blue-700 text-white
               transition-all duration-300 ease-in-out
               flex items-center justify-center
-              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+              hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-600 hover:text-white
               hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:scale-100
             ">
           {isSubmitting ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" />Sending...</> : 'Send Message'}
@@ -83,7 +84,7 @@ function ContactForm() {
       </form>
       {/* Success message remains the same */}
       {submitSuccess && (
-        <div className="mt-4 flex items-center p-4 text-sm text-green-700 bg-green-100 rounded-lg">
+        <div className="mt-4 flex items-center p-4 text-sm text-blue-800 bg-blue-200 rounded-lg">
           <CheckCircle className="h-5 w-5 mr-3" />
           Message sent successfully! We'll get back to you soon.
         </div>

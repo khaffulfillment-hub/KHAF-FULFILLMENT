@@ -33,7 +33,7 @@ function IndustryCard({ name, imageUrl, url , description }) {
           <Button
             ripple={false}
             fullWidth={true}
-            className="bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold shadow-md hover:shadow-lg transition-all"
+            className="bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold shadow-md hover:shadow-lg transition-all"
           >
             Learn More
           </Button>

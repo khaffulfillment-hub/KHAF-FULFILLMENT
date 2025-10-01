@@ -44,12 +44,12 @@ export default function Pricing() {
   const [activeModal, setActiveModal] = useState(null); // State to manage which modal is open: 'quote', 'partner', 'track', or null
 
   return (
-    <section id="pricing" className="bg-green-50 py-16 px-6 md:px-12 pt-24">
-      <Typography variant="h2" className="text-center font-bold mb-6 text-green-900">
+    <section id="pricing" className="bg-blue-50 py-16 px-6 md:px-12 pt-24">
+      <Typography variant="h2" className="text-center font-bold mb-6 text-blue-900">
         Our Competitive Pricing
       </Typography>
 
-      <Typography variant="h4" className="text-center font-bold mb-12 text-green-800">
+      <Typography variant="h4" className="text-center font-bold mb-12 text-blue-800">
         KHAF FULFILLMENT BY AMAZON
       </Typography>
 
@@ -64,23 +64,23 @@ export default function Pricing() {
             <CardHeader
               variant="gradient"
               color="green"
-              className="rounded-3xl pt-6 pb-10 text-center bg-gradient-to-r from-green-150 to-green-200 text-white"
+              className="rounded-3xl pt-6 pb-10 text-center bg-gradient-to-r from-green-150 to-blue-200 text-white"
             >
-              <Typography variant="h6" className="font-extrabold text-green-800">
+              <Typography variant="h6" className="font-extrabold text-blue-800">
                 {tier.scale}
               </Typography>
             </CardHeader>
             <CardBody className="text-center">
-              <Typography variant="h2" color="green" className="font-bold mb-6 text-green-700">
+              <Typography variant="h2" color="green" className="font-bold mb-6 text-blue-700">
                 {tier.price}
               </Typography>
               <List>
                 {tier.features.map((feature) => (
                   <ListItem key={feature} className="flex items-center gap-3 px-0 py-2">
                     <ListItemPrefix>
-                      <CheckIcon className="w-5 h-5 text-green-500" />
+                      <CheckIcon className="w-5 h-5 text-blue-500" />
                     </ListItemPrefix>
-                    <Typography className="text-green-800">{feature}</Typography>
+                    <Typography className="text-blue-800">{feature}</Typography>
                   </ListItem>
                 ))}
               </List>
@@ -91,9 +91,9 @@ export default function Pricing() {
                 onClick={() => setActiveModal('quote')} // Call toggleForm when button is clicked
                 className="
                 px-6 py-3 font-semibold rounded-full
-                bg-gradient-to-r from-green-300 to-green-500 text-white
+                bg-gradient-to-r from-blue-300 to-blue-500 text-white
                 transition-all duration-300 ease-in-out
-                hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+                hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-500 hover:text-white
                 hover:scale-105 hover:shadow-lg"
               >
                 Choose Plan
@@ -103,7 +103,7 @@ export default function Pricing() {
         ))}
       </div>
 
-      <Typography variant="h4" className="text-center font-bold mb-8 text-green-800">
+      <Typography variant="h4" className="text-center font-bold mb-8 text-blue-800">
         KHAF FULFILLMENT BY MERCHANT (EBM)
       </Typography>
 
@@ -111,28 +111,28 @@ export default function Pricing() {
         <Card
           shadow={true}
           color="white"
-          className="bg-white w-full max-w-md rounded-3xl text-green-900 hover:scale-105 transition-transform duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-green-400/40 cursor-pointer"
+          className="bg-white w-full max-w-md rounded-3xl text-blue-900 hover:scale-105 transition-transform duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-blue-400/40 cursor-pointer"
         >
           <CardHeader
             variant="gradient"
             color="green"
-            className="rounded-3xl pt-6 pb-10 text-center bg-gradient-to-r from-green-150 to-green-200 text-white"
+            className="rounded-3xl pt-6 pb-10 text-center bg-gradient-to-r from-blue-150 to-blue-200 text-white"
           >
-            <Typography variant="h6" className="font-extrabold text-green-800">
+            <Typography variant="h6" className="font-extrabold text-blue-800">
               {fbm.scale}
             </Typography>
           </CardHeader>
           <CardBody className="text-center">
-            <Typography variant="h2" color="green" className="font-bold mb-6 text-green-700">
+            <Typography variant="h2" color="green" className="font-bold mb-6 text-blue-700">
               {fbm.price}
             </Typography>
             <List>
               {fbm.features.map((feature) => (
                 <ListItem key={feature} className="flex items-center gap-3 px-0 py-2">
                   <ListItemPrefix>
-                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <CheckIcon className="w-5 h-5 text-blue-500" />
                   </ListItemPrefix>
-                  <Typography className="text-green-800">{feature}</Typography>
+                  <Typography className="text-blue-800">{feature}</Typography>
                 </ListItem>
               ))}
             </List>
@@ -142,9 +142,9 @@ export default function Pricing() {
               onClick={() => setActiveModal('quote')}
               className="
               px-6 py-3 font-semibold rounded-full
-              bg-gradient-to-r from-green-300 to-green-500 text-white
+              bg-gradient-to-r from-blue-300 to-blue-500 text-white
               transition-all duration-300 ease-in-out
-              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+              hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-500 hover:text-white
               hover:scale-105 hover:shadow-lg"
             >
               Choose Plan

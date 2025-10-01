@@ -18,7 +18,7 @@ function Hero() {
           {/* Left Content */}
           <div className="flex-1 w-full">
             <div className="text-muted-foreground text-sm mb-1 tracking-wide font-medium">
-              LOGISTICS & KHAF FULFILLMENT
+              KHAF LOGISTIC & FULFILLMENT
             </div>
             <h1 className="text-[hsl(var(--foreground))] text-3xl md:text-4xl font-bold leading-tight mb-4">
               Transforming supply chains with speed, precision, and intelligence <br /><span className="italic ml-9 mt-9 text-2xl">— driving efficiency and growth at every stage.</span>
@@ -31,9 +31,9 @@ function Hero() {
                 onClick={() => setActiveModal('quote')}
                 className="
                   px-6 py-3 font-semibold rounded-lg
-                  bg-gradient-to-r from-green-300 to-green-500 text-white
+                  bg-gradient-to-r from-blue-500 to-blue-800 text-white
                   transition-all duration-300 ease-in-out
-                  hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+                  hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 hover:text-white
                   hover:scale-105 hover:shadow-lg
                 ">
                 Get a Quote

@@ -22,8 +22,8 @@ const navItems = [
   { text: "About", id: "about" },
   { text: "Services", id: "services" },
   { text: "Industries", id: "industries" },
-  { text: "Contact", id: "contact" },
   { text: "Pricing", id: "pricing" },
+  { text: "Contact", id: "contact" },
 ];
 
 function Header() {
@@ -62,8 +62,8 @@ function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-green-50/80 shadow-md backdrop-blur-lg border-b border-green-200"
-            : "bg-green-100/50"
+            ? "bg-blue-50/80 shadow-md backdrop-blur-lg border-b border-blue-300"
+            : "bg-blue-100/50"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,8 +72,8 @@ function Header() {
             <div className="flex-shrink-0 flex items-center">
               <img src={Logo} alt="KHAF FULFILLMENT Logo" className="h-14 w-auto mr-3 hover:scale-105 transition-transform" />
               <div className="hover:scale-105 transition-transform">
-                <span className="block text-2xl font-bold text-lime-400">KHAF FULFILLMENT</span>
-                <span className="block text-xs text-lime-300">Fast. Flexible. Future-Ready.</span>
+                <span className="block text-2xl font-bold text-blue-800">KHAF FULFILLMENT</span>
+                <span className="block text-xs text-blue-500">Fast. Flexible. Future-Ready.</span>
               </div>
             </div>
 
@@ -102,7 +102,7 @@ function Header() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
-                          className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-md z-0"
+                          className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md z-0"
                           transition={{ type: "spring", stiffness: 300, damping: 30 }}
                         />
                       )}
@@ -123,9 +123,9 @@ function Header() {
                 onClick={() => setActiveModal('quote')}
                 className="
               px-6 py-3 font-semibold rounded-lg
-              bg-gradient-to-r from-green-300 to-green-500 text-white
+              bg-gradient-to-r from-blue-400 to-blue-700 text-white
               transition-all duration-300 ease-in-out
-              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+              hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:text-white
               hover:scale-105 hover:shadow-lg"
               >
                 Get a Quote
@@ -202,7 +202,7 @@ function Header() {
                 </ul>
               </motion.nav>
 
-              <div className="mt-12 pt-8 border-t border-green-200 flex flex-col space-y-4">
+              <div className="mt-12 pt-8 border-t border-blue-200 flex flex-col space-y-4">
                 <Button variant="outline"
                   onClick={() => setActiveModal('track')}
                   className="px-6 py-3 bg-[hsl(var(--background))] text-[hsl(var(--primary))] rounded-lg text-base font-semibold border border-[hsl(var(--primary))] shadow transition-all hover:bg-[hsl(var(--muted))]">
@@ -212,9 +212,9 @@ function Header() {
                   onClick={() => setActiveModal('quote')}
                   className="
                   px-6 py-3 font-semibold rounded-lg
-                  bg-gradient-to-r from-green-300 to-green-500 text-white
+                  bg-gradient-to-r from-blue-300 to-blue-700 text-white
                   transition-all duration-300 ease-in-out
-                  hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+                  hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:text-white
                   hover:scale-105 hover:shadow-lg"
                 >
                   Get a Quote

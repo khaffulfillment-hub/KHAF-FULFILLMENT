@@ -59,57 +59,6 @@ function PartnerWithUsForm() {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Basic validation check
-    if (!formData.contactName || !formData.email || !formData.companyName || selectedIndustries.length === 0) {
-      // eslint-disable-next-line no-undef
-      alert("Please fill in all required fields: Name, Email, Company, and select at least one Industry.");
-      return;
-    }
-
-    const payload = {
-      name: formData.contactName,
-      email: formData.email,
-      phone: formData.contactNumber,
-      companyName: formData.companyName,
-      industries: selectedIndustries, // Assuming backend expects array of strings
-      estimatedUnits: formData.estimatedUnits,
-      comments: formData.comments,
-    };
-
-    try {
-      // FIX: Changed endpoint from '/api/partner' to '/api/forms/partner'
-      // eslint-disable-next-line no-undef
-      const response = await fetch('https://edison3pl-m6gx.vercel.app/api/forms/partner', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      // eslint-disable-next-line no-undef
-      console.log('Partnership Proposal Response:', data);
-      // eslint-disable-next-line no-undef
-      alert("Thank you for your interest in partnering with us! We will review your proposal and be in touch soon.");
-      // Optionally clear form or redirect
-      setFormData({ contactName: '', contactNumber: '', email: '', companyName: '', estimatedUnits: '', comments: '' });
-      setSelectedIndustries([]);
-
-    } catch (error) {
-      // eslint-disable-next-line no-undef
-      console.error('Error submitting partnership proposal:', error);
-      // eslint-disable-next-line no-undef
-      alert('Failed to submit proposal. Please try again later.');
-    }
-  };
-
   return (
     <div>
       <h2 className="text-3xl font-bold text-gray-900">Partner With Us</h2>
@@ -117,18 +66,19 @@ function PartnerWithUsForm() {
         We're looking for great partners. Tell us about your business and let's grow together.
       </p>
 
-      <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+      <form className="mt-8 space-y-6" action="https://formspree.io/f/xanpqznn" method="POST">
         {/* --- Contact & Company Info --- */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <input type="text" id="contactName" value={formData.contactName} onChange={handleInputChange} placeholder="Contact Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
-          <input type="email" id="email" value={formData.email} onChange={handleInputChange} placeholder="Email Address" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
-          <input type="tel" id="contactNumber" value={formData.contactNumber} onChange={handleInputChange} placeholder="Contact Number" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
-          <input type="text" id="companyName" value={formData.companyName} onChange={handleInputChange} placeholder="Company Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
+          <input type="text" id="contactName" name="contactName" value={formData.contactName} onChange={handleInputChange} placeholder="Contact Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
+          <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email Address" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
+          <input type="tel" id="contactNumber" name="contactNumber" value={formData.contactNumber} onChange={handleInputChange} placeholder="Contact Number" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
+          <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleInputChange} placeholder="Company Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
         </div>
 
         {/* --- Custom Multi-Selector for Industries --- */}
         <div ref={dropdownRef}>
           <label className="text-sm font-bold text-gray-800">Your Industry/Industries</label>
+          <input type="hidden" name="industries" value={selectedIndustries.join(', ')} />
           <div className="flex flex-wrap gap-2 p-2 mt-2 bg-gray-100 border-transparent rounded-lg min-h-[48px] items-center cursor-pointer" onClick={() => setDropdownOpen(!isDropdownOpen)}>
             {selectedIndustries.map(industry => (
               <div key={industry} className="flex items-center gap-2 px-3 py-1 text-sm font-semibold text-white bg-green-600 rounded-full">
@@ -160,11 +110,11 @@ function PartnerWithUsForm() {
         {/* --- Estimated Volume & Comments --- */}
         <div>
           <label htmlFor="estimatedUnits" className="text-sm font-medium text-gray-700">Estimated Units Per Month</label>
-          <input type="number" id="estimatedUnits" value={formData.estimatedUnits} onChange={handleInputChange} placeholder="e.g., 2000" min="0" onKeyDown={(e) => { if (e.key === '-') e.preventDefault(); }} className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
+          <input type="number" id="estimatedUnits" name="estimatedUnits" value={formData.estimatedUnits} onChange={handleInputChange} placeholder="e.g., 2000" min="0" onKeyDown={(e) => { if (e.key === '-') e.preventDefault(); }} className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
         </div>
         <div>
           <label htmlFor="comments" className="text-sm font-medium text-gray-700">Comments</label>
-          <textarea id="comments" value={formData.comments} onChange={handleInputChange} rows="4" placeholder="Tell us more about your business needs or partnership ideas..." className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+          <textarea id="comments" name="comments" value={formData.comments} onChange={handleInputChange} rows="4" placeholder="Tell us more about your business needs or partnership ideas..." className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
         </div>
 
         {/* --- Action Button --- */}

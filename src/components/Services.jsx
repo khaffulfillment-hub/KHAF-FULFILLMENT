@@ -8,7 +8,7 @@ import { Typography } from "@material-tailwind/react";
 function Services() {
   const services = [
     {
-      title: "Warehousing & Inventory",
+      title: "Warehousing & Inventory Storage",
       description: "Secure, scalable storage with real-time inventory visibility to optimize stock control.",
       cta: "Learn More",
       imageUrl: WarehousingInventoryImg,
@@ -22,8 +22,8 @@ function Services() {
       url: "https://en.wikipedia.org/wiki/Order_processing"
     },
     {
-      title: "Custom Packaging & Kitting",
-      description: "Tailored kitting and branded packaging to enhance presentation and streamline orders.",
+      title: "Distribution",
+      description: "Shipping, freight coordination, international logistics, and customs for efficient delivery.",
       cta: "Learn More",
       imageUrl: CustomPackagingImg,
       url: "https://en.wikipedia.org/wiki/Contract_packager"
@@ -31,9 +31,9 @@ function Services() {
   ];
 
   return (
-    <section id="services" className="bg-green-50 py-16 px-6 md:px-12 pt-24">
+    <section id="services" className="bg-blue-50 py-16 px-6 md:px-12 pt-24">
       <div className="max-w-7xl mx-auto">
-        <Typography variant="h2" className="text-center font-bold mb-12 text-green-900">
+        <Typography variant="h2" className="text-center font-bold mb-12 text-blue-900">
           Our Services
         </Typography>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
