@@ -55,7 +55,7 @@ function Hero() {
             <img
               src={TruckLogo}
               alt="KHAF FULFILLMENT Logo Truck"
-              className="w-[320px] max-w-full"
+              className="w-[520px] max-w-full"
               style={{
                 filter: 'drop-shadow(0 0 12px hsl(var(--accent)) / 0.8)',
               }}
