@@ -69,10 +69,10 @@ function PartnerWithUsForm() {
       <form className="mt-8 space-y-6" action="https://formspree.io/f/xanpqznn" method="POST">
         {/* --- Contact & Company Info --- */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <input type="text" id="contactName" name="contactName" value={formData.contactName} onChange={handleInputChange} placeholder="Contact Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email Address" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
-          <input type="tel" id="contactNumber" name="contactNumber" value={formData.contactNumber} onChange={handleInputChange} placeholder="Contact Number" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
-          <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleInputChange} placeholder="Company Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required />
+          <input type="text" id="contactName" name="contactName" value={formData.contactName} onChange={handleInputChange} placeholder="Contact Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+          <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email Address" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+          <input type="tel" id="contactNumber" name="contactNumber" value={formData.contactNumber} onChange={handleInputChange} placeholder="Contact Number" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleInputChange} placeholder="Company Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
         </div>
 
         {/* --- Custom Multi-Selector for Industries --- */}
@@ -81,7 +81,7 @@ function PartnerWithUsForm() {
           <input type="hidden" name="industries" value={selectedIndustries.join(', ')} />
           <div className="flex flex-wrap gap-2 p-2 mt-2 bg-gray-100 border-transparent rounded-lg min-h-[48px] items-center cursor-pointer" onClick={() => setDropdownOpen(!isDropdownOpen)}>
             {selectedIndustries.map(industry => (
-              <div key={industry} className="flex items-center gap-2 px-3 py-1 text-sm font-semibold text-white bg-green-600 rounded-full">
+              <div key={industry} className="flex items-center gap-2 px-3 py-1 text-sm font-semibold text-white bg-blue-600 rounded-full">
                 {industry}
                 <button type="button" onClick={(e) => { e.stopPropagation(); handleToggleIndustry(industry); }} className="transition-transform duration-150 hover:scale-125">
                   <FaTimes />
@@ -96,9 +96,9 @@ function PartnerWithUsForm() {
                 {ALL_INDUSTRIES.map(industryName => {
                   const isSelected = selectedIndustries.includes(industryName);
                   return (
-                    <div key={industryName} onClick={() => handleToggleIndustry(industryName)} className={`px-4 py-3 cursor-pointer flex justify-between items-center transition-colors ${isSelected ? 'bg-blue-100 font-bold text-green-600' : 'hover:bg-gray-100'}`}>
+                    <div key={industryName} onClick={() => handleToggleIndustry(industryName)} className={`px-4 py-3 cursor-pointer flex justify-between items-center transition-colors ${isSelected ? 'bg-blue-100 font-bold text-blue-600' : 'hover:bg-gray-100'}`}>
                       {industryName}
-                      {isSelected && <span className="text-green-600">✓</span>}
+                      {isSelected && <span className="text-blue-600">✓</span>}
                     </div>
                   );
                 })}
@@ -110,19 +110,19 @@ function PartnerWithUsForm() {
         {/* --- Estimated Volume & Comments --- */}
         <div>
           <label htmlFor="estimatedUnits" className="text-sm font-medium text-gray-700">Estimated Units Per Month</label>
-          <input type="number" id="estimatedUnits" name="estimatedUnits" value={formData.estimatedUnits} onChange={handleInputChange} placeholder="e.g., 2000" min="0" onKeyDown={(e) => { if (e.key === '-') e.preventDefault(); }} className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
+          <input type="number" id="estimatedUnits" name="estimatedUnits" value={formData.estimatedUnits} onChange={handleInputChange} placeholder="e.g., 2000" min="0" onKeyDown={(e) => { if (e.key === '-') e.preventDefault(); }} className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div>
           <label htmlFor="comments" className="text-sm font-medium text-gray-700">Comments</label>
-          <textarea id="comments" name="comments" value={formData.comments} onChange={handleInputChange} rows="4" placeholder="Tell us more about your business needs or partnership ideas..." className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+          <textarea id="comments" name="comments" value={formData.comments} onChange={handleInputChange} rows="4" placeholder="Tell us more about your business needs or partnership ideas..." className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
         </div>
 
         {/* --- Action Button --- */}
         <button type="submit" className="
               px-6 py-3 w-full font-semibold rounded-lg
-              bg-gradient-to-r from-green-300 to-green-500 text-white
+              bg-gradient-to-r from-blue-600 to-blue-700 text-white
               transition-all duration-300 ease-in-out
-              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+              hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:text-white
               hover:scale-105 hover:shadow-lg
             ">
           Submit Proposal

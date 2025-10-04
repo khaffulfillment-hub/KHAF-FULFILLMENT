@@ -16,17 +16,17 @@ import ShipBobLogo from '../assets/logos/ShipBobLogo.png';
 // The key here is the `trackUrlTemplate` which includes the query parameter.
 const nationalCarriers = [
   { name: 'USPS', trackUrlTemplate: 'https://tools.usps.com/go/TrackConfirmAction?tLabels=', logo: UspsLogo },
-  { name: 'India Post', trackUrlTemplate: 'https://www.indiapost.gov.in/_layouts/15/dop.portal.tracking/trackconsignment.aspx?reqtype=i&Number=', logo: IndiaPostLogo },
-  { name: 'Blue Dart', trackUrlTemplate: 'https://www.bluedart.com/tracking?Waybill=', logo: BlueDartLogo },
+  { name: 'FedEx', trackUrlTemplate: 'https://www.fedex.com/apps/fedextrack/?tracknumbers=', logo: FedexLogo },
+  { name: 'UPS', trackUrlTemplate: 'https://www.ups.com/track?tracknum=', logo: UpsLogo },
 ];
 
 const internationalCarriers = [
-  { name: 'FedEx', trackUrlTemplate: 'https://www.fedex.com/apps/fedextrack/?tracknumbers=', logo: FedexLogo },
-  { name: 'UPS', trackUrlTemplate: 'https://www.ups.com/track?tracknum=', logo: UpsLogo },
   { name: 'DHL Express', trackUrlTemplate: 'https://www.dhl.com/global-en/home/tracking.html?tracking-id=', logo: DhlLogo },
+  { name: 'ShipBob', trackUrlTemplate: 'https://track.shipbob.com/?tracking=', logo: ShipBobLogo },
+  { name: 'Blue Dart', trackUrlTemplate: 'https://www.bluedart.com/tracking?Waybill=', logo: BlueDartLogo },
   { name: 'Royal Mail', trackUrlTemplate: 'https://www.royalmail.com/track-your-item#/', logo: RoyalMailLogo },
   { name: 'Canada Post', trackUrlTemplate: 'https://www.canadapost-postescanada.ca/track-reperage/en#/search?searchFor=', logo: CanadaPostLogo },
-  { name: 'ShipBob', trackUrlTemplate: 'https://track.shipbob.com/?tracking=', logo: ShipBobLogo }  
+  { name: 'India Post', trackUrlTemplate: 'https://www.indiapost.gov.in/_layouts/15/dop.portal.tracking/trackconsignment.aspx?reqtype=i&Number=', logo: IndiaPostLogo },  
 ];
 
 
@@ -105,9 +105,9 @@ function TrackShipmentForm() {
         />
         <button type="submit" className="
               px-6 py-3 w-3/5 font-semibold rounded-lg
-              bg-gradient-to-r from-green-300 to-green-500 text-white
+              bg-gradient-to-r from-blue-600 to-blue-700 text-white
               transition-all duration-300 ease-in-out
-              hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white
+              hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:text-white
               hover:scale-105 hover:shadow-lg
             ">
           Track
