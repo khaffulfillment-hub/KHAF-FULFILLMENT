@@ -62,7 +62,7 @@ function About() {
         
         {/* Paragraph with Highlighted Keywords */}
         <Typography variant="lead" className="text-gray-600 text-lg lg:text-xl">
-          <p>At Khaf Fulfillment, we believe in the power of <strong className="text-blue-800 font-semibold">automation</strong> and <strong className="text-blue-800 font-semibold">scalability</strong> to revolutionize supply chain management. We leverage <strong className="text-blue-800 font-semibold">cutting-edge technology</strong> and intelligent processes to deliver unparalleled <strong className="text-blue-800 font-semibold">efficiency</strong>, accuracy, and <strong className="text-blue-800 font-semibold">flexibility</strong>, ensuring your logistics operations are not just managed, but optimized for future growth.</p>
+          At Khaf Fulfillment, we believe in the power of <strong className="text-blue-800 font-semibold">automation</strong> and <strong className="text-blue-800 font-semibold">scalability</strong> to revolutionize supply chain management. We leverage <strong className="text-blue-800 font-semibold">cutting-edge technology</strong> and intelligent processes to deliver unparalleled <strong className="text-blue-800 font-semibold">efficiency</strong>, accuracy, and <strong className="text-blue-800 font-semibold">flexibility</strong>, ensuring your logistics operations are not just managed, but optimized for future growth.
         </Typography>
       </motion.div>
     </section>

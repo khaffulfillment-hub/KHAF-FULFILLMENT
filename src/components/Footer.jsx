@@ -31,7 +31,7 @@ function Footer() {
               Khaf Fulfillment
             </Typography>
             <Typography variant="small" className="text-gray-600 text-justify hover:text-blue-700 transition-colors duration-300">
-              <p>As a reliable and trusted 3PL partner, we are dedicated to transforming supply chains with speed, precision, and intelligent automation. Our services are engineered to support businesses of all sizes, ensuring your logistics operate with maximum efficiency and accuracy from start to finish.</p>
+              As a reliable and trusted 3PL partner, we are dedicated to transforming supply chains with speed, precision, and intelligent automation. Our services are engineered to support businesses of all sizes, ensuring your logistics operate with maximum efficiency and accuracy from start to finish.
             </Typography>
           </div>
 
