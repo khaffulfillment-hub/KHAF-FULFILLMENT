@@ -7,22 +7,33 @@ import GetAQuoteForm from './GetAQuoteForm';
 import PartnerWithUsForm from './PartnerWithUsForm';
 import TrackShipmentForm from './TrackShipmentForm';
 
+// --- IMPORT THE NEW BRAND MARQUEE COMPONENT ---
+import BrandMarquee from './BrandMarquee';
+
+
+//brand logos
+import AmazonLogo from '../assets/BrandLogo/amazon.png';
+import WalmartLogo from '../assets/BrandLogo/Walmart.png';
+import eBayLogo from '../assets/BrandLogo/ebay.png';
+import ShopifyLogo from '../assets/BrandLogo/Shopify.png';
+import TikTokShopLogo from '../assets/BrandLogo/TikTok-Shop.png';
+
 function Hero() {
   // State to manage which modal is open: 'quote', 'partner', 'track', or null
   const [activeModal, setActiveModal] = useState(null);
   const BRANDS = [
-    { name: "Amazon",  url: "https://logo.clearbit.com/amazon.com" },
-    { name: "Walmart", url: "https://logo.clearbit.com/walmart.com" },
-    { name: "eBay",    url: "https://logo.clearbit.com/ebay.com" },
-    { name: "Target",  url: "https://logo.clearbit.com/target.com" },
-    { name: "Shopify", url: "https://logo.clearbit.com/shopify.com" },
+    { name: "Amazon", logo: AmazonLogo },
+    { name: "Walmart", logo: WalmartLogo },
+    { name: "eBay", logo: eBayLogo },
+    { name: "Shopify", logo: ShopifyLogo  },
+    { name: "TikTok", logo: TikTokShopLogo },
   ];
 
 
   return (
     <>
       <section id ="hero" className="py-24 px-4 sm:px-6 lg:px-8 w-full min-h-[350px] bg-[hsl(var(--background))] flex items-center justify-center">
-        <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
+        <div className="max-w-7xl w-full flex flex-col md:flex-row items-center md:items-start justify-between gap-6 md:gap-10">
           {/* Left Content */}
           <div className="flex-1 w-full">
             <div className="text-muted-foreground text-sm mb-1 tracking-wide font-medium">
@@ -64,22 +75,12 @@ function Hero() {
               src={TruckLogo}
               alt="KHAF FULFILLMENT Logo Truck"
               className="w-[520px] max-w-full"
-              style={{ filter: 'drop-shadow(0 0 12px hsl(var(--accent)) / 0.8)' }}
             />
           
             {/* Brand strip */}
-            <div className="w-full max-w-[520px] mt-6">
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 items-center justify-items-center">
-                {BRANDS.map(b => (
-                  <img
-                    key={b.name}
-                    src={b.url}
-                    alt={b.name}
-                    className="h-8 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition"
-                    loading="lazy"
-                  />
-                ))}
-              </div>
+            <div className="w-full max-w-[520px] -mt-10">
+              {/* --- HERE IS THE CHANGE: The old grid is replaced with our new component --- */}
+              <BrandMarquee brands={BRANDS} />
             </div>
           </div>
 
