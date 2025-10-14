@@ -21,7 +21,6 @@ const navItems = [
   { text: "Home", id: "hero" },
   { text: "About", id: "about" },
   { text: "Services", id: "services" },
-  { text: "Industries", id: "industries" },
   { text: "Pricing", id: "pricing" },
   { text: "Contact", id: "contact" },
 ];

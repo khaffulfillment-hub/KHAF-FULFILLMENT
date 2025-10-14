@@ -25,7 +25,7 @@ function ContactForm() {
       };
 
       // eslint-disable-next-line no-undef
-      const response = await fetch("https://formspree.io/f/mpwyokqq", {
+      const response = await fetch("https://formspree.io/f/mpwyokqq",{
         method: "POST",
         headers: {
           'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ const PRICING_TIERS = {
   medium: { maxUnits: 1000, price: 0.65, name: 'Medium Scale' },
   large: { price: 0.60, name: 'Large Scale' },
 };
-const ALL_INDUSTRIES = ["eCommerce", "Retail", "Healthcare", "Electronics", "Food", "Industrial"];
+const ALL_INDUSTRIES = ["eCommerce", "Retail", "Electronics", "Food", "Industrial"];
 
 function GetAQuoteForm() {
   // --- Refs ---

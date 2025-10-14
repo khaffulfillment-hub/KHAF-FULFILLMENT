@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaTimes } from 'react-icons/fa'; // Icon for the 'deselect' button
 
 // --- Configuration ---
-const ALL_INDUSTRIES = ["eCommerce", "Retail", "Healthcare", "Electronics", "Food", "Industrial"];
+const ALL_INDUSTRIES = ["eCommerce", "Retail", "Electronics", "Food", "Industrial"];
 
 function PartnerWithUsForm() {
   // --- State Management ---
