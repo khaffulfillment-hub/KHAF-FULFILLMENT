@@ -66,7 +66,7 @@ function PartnerWithUsForm() {
         We're looking for great partners. Tell us about your business and let's grow together.
       </p>
 
-      <form className="mt-8 space-y-6" action="https://formspree.io/f/xanpqznn" method="POST">
+      <form className="mt-8 space-y-6" action="https://formspree.io/f/mzzjkyzn" method="POST">
         {/* --- Contact & Company Info --- */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <input type="text" id="contactName" name="contactName" value={formData.contactName} onChange={handleInputChange} placeholder="Contact Name" className="w-full px-4 py-3 text-gray-800 bg-gray-100 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />

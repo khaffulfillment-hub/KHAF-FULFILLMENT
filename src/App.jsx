@@ -24,7 +24,7 @@ export default function App() {
         <Hero />
         <About />
         <Services />
-        <Industries />
+        {/* <Industries /> */}
         <Pricing />
         {/* <TeamSection /> */}
         <Contact />

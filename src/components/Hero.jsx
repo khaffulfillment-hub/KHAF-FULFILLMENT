@@ -21,7 +21,7 @@ function Hero() {
               KHAF LOGISTIC & FULFILLMENT
             </div>
             <h1 className="text-[hsl(var(--foreground))] text-3xl md:text-4xl font-bold leading-tight mb-4">
-              Transforming supply chains with speed, precision, and intelligence <br /><span className="italic ml-9 mt-9 text-2xl">— driving efficiency and growth at every stage.</span>
+              Transforming supply chains with speed, precision, and intelligence <br /><span className="italic ml-9 mt-9 text-2xl">— driving efficiency and growth at every stage.</span>
             </h1>
             <p className="text-muted-foreground text-base mb-6 max-w-xl">
               KHAF FULFILLMENT is an accomplished 3PL partner based in the U.S., dedicated to enhancing supply chain effectiveness and logistics performance for companies of all sizes. We provide end-to-end solutions—from warehousing and inventory management to order fulfillment and packaging—tailored to each client’s needs. With a focus on efficiency, accuracy, and scalability, we help businesses streamline operations and achieve sustainable growth
