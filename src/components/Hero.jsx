@@ -10,6 +10,14 @@ import TrackShipmentForm from './TrackShipmentForm';
 function Hero() {
   // State to manage which modal is open: 'quote', 'partner', 'track', or null
   const [activeModal, setActiveModal] = useState(null);
+  const BRANDS = [
+    { name: "Amazon",  url: "https://logo.clearbit.com/amazon.com" },
+    { name: "Walmart", url: "https://logo.clearbit.com/walmart.com" },
+    { name: "eBay",    url: "https://logo.clearbit.com/ebay.com" },
+    { name: "Target",  url: "https://logo.clearbit.com/target.com" },
+    { name: "Shopify", url: "https://logo.clearbit.com/shopify.com" },
+  ];
+
 
   return (
     <>
@@ -51,16 +59,30 @@ function Hero() {
             </div>
           </div>
           {/* Right Image */}
-          <div className="flex-1 flex items-center justify-center w-full">
+          <div className="flex-1 flex flex-col items-center justify-center w-full">
             <img
               src={TruckLogo}
               alt="KHAF FULFILLMENT Logo Truck"
               className="w-[520px] max-w-full"
-              style={{
-                filter: 'drop-shadow(0 0 12px hsl(var(--accent)) / 0.8)',
-              }}
+              style={{ filter: 'drop-shadow(0 0 12px hsl(var(--accent)) / 0.8)' }}
             />
+          
+            {/* Brand strip */}
+            <div className="w-full max-w-[520px] mt-6">
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 items-center justify-items-center">
+                {BRANDS.map(b => (
+                  <img
+                    key={b.name}
+                    src={b.url}
+                    alt={b.name}
+                    className="h-8 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
